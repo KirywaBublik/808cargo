@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    font-family: "Jost", sans-serif;
+    background-color: rgb(29,29,29);
+}
+
+.abc{
+    color: #fff;
+    margin: 0 24px;
+    font-family: "Jost";
+    font-size: 24px;
+    font-weight: 200;
+    text-decoration: none;
+    position: relative;
+    letter-spacing: 0.25em;
+}
