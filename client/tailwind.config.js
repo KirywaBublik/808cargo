@@ -7,6 +7,7 @@ export default {
 				'dark-header': 'rgba(19,19,19)',
 				'grey-color': 'rgba(163,163,163)',
 				'border-header': '#edbd44',
+				'search-color': '157 163 174',
 			},
 		},
 	},
