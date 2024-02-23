@@ -1,42 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer utilities {
-    .underline-effect {
-        position: relative;
-        color: white; /*задаём цвет ссылки*/
-        cursor: pointer;
-        line-height: 1; /*задаём высоту строки*/
-        text-decoration: none;
-    }
-    .underline-effect:after{
-        display: block;
-        position: absolute;
-        left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
-        width: 0;/*задаём длинну линии до наведения курсора*/
-        height: 1px; /*задаём ширину линии*/
-        background-color: white; /*задаём цвет линии*/
-        content: "";
-        margin-top: 10px;
-        transition: width 0.3s ease-out;
-    }
-    .underline-effect:hover:after,
-    .underline-effect:focus:after{
-        width: 100%;
-    }
-
-    .back {
-        background:linear-gradient(
-                179.99deg,
-                #ffdb7e 0.01%,
-                rgba(255, 129, 129, 0) 184.5%
-        );;
-    }
-}
-
 * {
     padding: 0;
     margin: 0;
@@ -106,10 +70,4 @@ img {
 h1, h2, h3, h4, h5, h6 {
     font-style: inherit;
     font-weight: 400;
-}
-
-html,body{
-    height: 100%;
-    font-family: "Jost", sans-serif;
-    background-color: rgb(29,29,29);
 }
