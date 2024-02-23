@@ -1,8 +1,47 @@
 import { Link } from "react-router-dom";
+import {
+  Button,
+  Input,
+  Loading,
+} from "@shared/ui";
+import { useState } from "react";
 const MainPage = () => {
+  const [value, setValue] = useState("");
   return (
     <div>
-      <Link to="/about">mainsadcsddcdsc</Link>
+      <Link className="text-2xl" to="/about">
+        Привет
+      </Link>
+      <br />
+      <br />
+      <br />
+      <Button className="space-medium-18">
+        Заказать звонок
+      </Button>
+      <br />
+      <br />
+      <br />
+      <Button className="space-medium-14">
+        Кнопка
+      </Button>
+      <br />
+      <br />
+      <br />
+      <Input
+        value={value}
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
+        placeholder="Ваш город"
+      />
+      <br />
+      <br />
+      <br />
+      <p className="space-medium-14">{value}</p>
+      <br />
+      <br />
+      <br />
+      <Loading />
     </div>
   );
 };

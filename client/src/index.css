@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -32,6 +35,10 @@ html, body {
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+    background: rgb(18, 29, 80);
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
 }
 
 input, button, textarea {
@@ -70,4 +77,30 @@ img {
 h1, h2, h3, h4, h5, h6 {
     font-style: inherit;
     font-weight: 400;
+}
+@layer utilities {
+    .space-medium {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .space-medium-14 {
+        @apply space-medium;
+        font-size: 14px;
+    }
+
+    .space-medium-18 {
+        @apply space-medium;
+        font-size: 18px;
+    }
+
+    .space-bold-font{
+
+    }
+    .roboto-font{
+
+    }
 }
