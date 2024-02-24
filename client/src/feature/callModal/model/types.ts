@@ -3,7 +3,6 @@ import { type ComponentProps } from "react";
 
 export interface ModalProps
   extends ComponentProps<"div"> {
-  actiive: boolean;
+  active: boolean;
   handleClose: () => void;
-  children: React.ReactNode;
 }

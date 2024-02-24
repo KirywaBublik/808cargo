@@ -1,10 +1,11 @@
 export const removeOverflowHiddenFromBody =
   () => {
-    const body = document.querySelector("body");
-    if (body) {
-      body.classList.remove("overflow-hidden");
-    }
+    const body = document.querySelector(
+      "body",
+    ) as HTMLBodyElement;
+    body.classList.remove("overflow-hidden");
   };
+
 export const addOverflowHiddenToBody = (
   paddingRight = "",
 ) => {
@@ -12,6 +13,6 @@ export const addOverflowHiddenToBody = (
     "body",
   ) as HTMLBodyElement;
   body.classList.add("overflow-hidden");
-  paddingRight &&
+  paddingRight !== "" &&
     (body.style.paddingRight = paddingRight);
 };

@@ -1,30 +1,25 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 import {
   Button,
   Input,
   Loading,
 } from "@shared/ui";
-import {
-  addOverflowHiddenToBody,
-  removeOverflowHiddenFromBody,
-} from "@/shared/lib/bodyOverflowHidden";
-import CallModal from "@/feature/callModal/ui/CallModal";
+import { addOverflowHiddenToBody } from "@/shared/lib/bodyOverflowHidden";
+import { Modal } from "@/widgets/Modal/ui/Modal";
 
 const MainPage = () => {
   const [value, setValue] = useState("");
   const [active, setActive] = useState(false);
+
   const handleOpen = () => {
     setActive(true);
     addOverflowHiddenToBody();
   };
-  const handleClose = () => {
-    setActive(false);
-    removeOverflowHiddenFromBody();
-  };
+
   return (
-    <div className="h-[200vh]">
+    <div>
       <Link className="text-2xl" to="/about">
         Привет
       </Link>
@@ -60,17 +55,10 @@ const MainPage = () => {
       <br />
       <br />
       <br />
-      <CallModal
-        actiive={active}
-        handleClose={handleClose}
-      >
-        Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Unde officia aliquid
-        magni obcaecati cum, sed soluta
-        laudantium, consequuntur, eveniet eum in
-        atque. Laborum consequuntur deserunt minus
-        tenetur recusandae enim aspernatur.
-      </CallModal>
+      <Modal
+        active={active}
+        setActive={setActive}
+      />
       <Loading />
     </div>
   );
