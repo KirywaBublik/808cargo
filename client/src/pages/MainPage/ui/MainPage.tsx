@@ -1,20 +1,41 @@
+import { Link } from "react-router-dom";
+import { useState } from "react";
+
 import {
   Button,
   Input,
   Loading,
 } from "@shared/ui";
-import { useState } from "react";
+import { addOverflowHiddenToBody } from "@/shared/lib/bodyOverflowHidden";
+import { Modal } from "@/widgets/Modal/ui/Modal";
+
 const MainPage = () => {
   const [value, setValue] = useState("");
+  const [active, setActive] = useState(false);
+
+  const handleOpen = () => {
+    setActive(true);
+    addOverflowHiddenToBody();
+  };
+
   return (
     <div>
+      <Link className="text-2xl" to="/about">
+        Привет
+      </Link>
+      <br />
+      <br />
+      <br />
       <Button className="space-medium-18">
         Заказать звонок
       </Button>
       <br />
       <br />
       <br />
-      <Button className="space-medium-14">
+      <Button
+        onClick={handleOpen}
+        className="space-medium-14"
+      >
         Кнопка
       </Button>
       <br />
@@ -34,6 +55,10 @@ const MainPage = () => {
       <br />
       <br />
       <br />
+      <Modal
+        active={active}
+        setActive={setActive}
+      />
       <Loading />
     </div>
   );
