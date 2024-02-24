@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import {
   Button,
   Input,
@@ -9,12 +8,6 @@ const MainPage = () => {
   const [value, setValue] = useState("");
   return (
     <div>
-      <Link className="text-2xl" to="/about">
-        Привет
-      </Link>
-      <br />
-      <br />
-      <br />
       <Button className="space-medium-18">
         Заказать звонок
       </Button>

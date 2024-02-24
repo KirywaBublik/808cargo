@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import { AboutPageAsync } from "@pages/AboutPage";
 import { MainPageAsync } from "@pages/MainPage";
+import { NotFoundedAsync } from "@pages/NotFounded";
 
 const routes: Record<AppRoutes, RouteProps> = {
   [AppRoutes.MAIN]: {
@@ -21,7 +22,7 @@ const routes: Record<AppRoutes, RouteProps> = {
   },
   [AppRoutes.NOT_FOUND]: {
     path: RoutePaths.notFound,
-    element: <>404 not found</>,
+    element: <NotFoundedAsync />,
   },
 };
 
