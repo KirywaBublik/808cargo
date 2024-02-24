@@ -26,10 +26,7 @@ const CallModal: FC<ModalProps> = ({
       }}
     >
       <div
-        className={`p-5 max-w-md rounded-xl bg-blue-950 relative ${active ? "scale-100" : "scale-50 transition-all duration-400"}`}
-        onClick={(e) => {
-          e.stopPropagation();
-        }}
+        className={` p-5 max-w-md w-75 rounded-xl bg-blue-950 relative ${active ? "scale-100" : "scale-50 transition-all duration-400"}`}
       >
         <button
           className="absolute top-1 right-2"

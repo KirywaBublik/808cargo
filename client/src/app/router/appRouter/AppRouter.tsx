@@ -10,6 +10,7 @@ import {
 import { AboutPageAsync } from "@pages/AboutPage";
 import { MainPageAsync } from "@pages/MainPage";
 import { NotFoundedAsync } from "@pages/NotFounded";
+import { ContactPageAsync } from "@/pages/ContactPage";
 
 const routes: Record<AppRoutes, RouteProps> = {
   [AppRoutes.MAIN]: {
@@ -19,6 +20,10 @@ const routes: Record<AppRoutes, RouteProps> = {
   [AppRoutes.ABOUT]: {
     path: RoutePaths.about,
     element: <AboutPageAsync />,
+  },
+  [AppRoutes.CONTACT]: {
+    path: RoutePaths.contact,
+    element: <ContactPageAsync />,
   },
   [AppRoutes.NOT_FOUND]: {
     path: RoutePaths.notFound,

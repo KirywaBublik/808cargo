@@ -48,6 +48,7 @@ const MainPage = () => {
         }}
         placeholder="Ваш город"
       />
+
       <br />
       <br />
       <br />

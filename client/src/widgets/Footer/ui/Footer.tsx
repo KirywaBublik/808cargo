@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
-    <div className="flex justify-between items-center">
+    <div className="max-w-[1200px] w-full mx-auto flex justify-between items-center">
       <div>
         <p className="space-bold-font text-bold">
           808CARGO
