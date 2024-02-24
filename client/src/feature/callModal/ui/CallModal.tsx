@@ -1,8 +1,7 @@
-import { FC } from "react";
-import { ModalProps } from "../model/types";
+import { type FC } from "react";
+import { type ModalProps } from "../model/types";
 import { CloseSvg } from "@shared/assets/CloseSvg";
-/* eslint-disable prettier/prettier */
-export const CallModal: FC<ModalProps> = ({
+const CallModal: FC<ModalProps> = ({
   actiive,
   handleClose,
   children,
@@ -30,3 +29,5 @@ export const CallModal: FC<ModalProps> = ({
     </div>
   );
 };
+
+export default CallModal;

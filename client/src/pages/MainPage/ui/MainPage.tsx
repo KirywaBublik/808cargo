@@ -1,15 +1,17 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+
 import {
   Button,
   Input,
   Loading,
 } from "@shared/ui";
-import { useState } from "react";
 import {
   addOverflowHiddenToBody,
   removeOverflowHiddenFromBody,
 } from "@/shared/lib/bodyOverflowHidden";
-import { CallModal } from "@/feature/callModal/ui/CallModal";
+import CallModal from "@/feature/callModal/ui/CallModal";
+
 const MainPage = () => {
   const [value, setValue] = useState("");
   const [active, setActive] = useState(false);

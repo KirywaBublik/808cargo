@@ -1,1 +1,3 @@
-export { CallModel } from "./ui/CallModal";
+import CallModel from "./ui/CallModal";
+
+export { CallModel };
