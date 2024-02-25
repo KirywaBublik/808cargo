@@ -1,4 +1,4 @@
-export const navHeader = [
+export const navLinks = [
   {
     id: 0,
     name: "Главная",

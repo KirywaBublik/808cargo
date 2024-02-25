@@ -1,2 +1,2 @@
 export { Header } from "./ui/Header.tsx";
-export { navHeader } from "./model/constants.ts";
+export { navLinks } from "./model/constants.ts";
