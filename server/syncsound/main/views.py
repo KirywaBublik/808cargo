@@ -1,12 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
-from .forms import UserInfoForm
+from main.forms import UserInfoForm
 
 
 def index(request):
     form = UserInfoForm(request.POST or None)
-    if form.is_valid():
-        pass
     context = {'form': form}
-    template = 'main/index.html'
-    return render(request, template, context)
+    if form.is_valid():
+        form.save()
+    return render(request, 'main/index.html', context)
