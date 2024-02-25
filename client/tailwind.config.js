@@ -11,9 +11,6 @@ export default {
         bgInputHover: "rgb(9, 14, 25)",
       },
     },
-    fontSize: {
-      bold: "32px",
-    },
   },
   plugins: [],
 };
