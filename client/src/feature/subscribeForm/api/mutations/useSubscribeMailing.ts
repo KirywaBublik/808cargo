@@ -7,5 +7,6 @@ export const useSubscribeMailing = () => {
     mutationFn: async (
       userData: SubscribeRequest,
     ) => await postSubscribeMailing(userData),
+    retry: 4,
   });
 };

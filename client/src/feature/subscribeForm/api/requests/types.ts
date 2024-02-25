@@ -1,7 +1,9 @@
 export interface SubscribeRequest {
-  name: string;
+  firstName: string;
+  lastName: string;
+  patronymic?: string | undefined;
   phone: string;
-  city: string;
+  city?: string | undefined;
 }
 export interface SubscribeResponse {
   code: string;

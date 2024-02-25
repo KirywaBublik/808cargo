@@ -8,10 +8,12 @@ import {
 } from "@shared/ui";
 import { addOverflowHiddenToBody } from "@/shared/lib/bodyOverflowHidden";
 import { Modal } from "@/widgets/Modal/ui/Modal";
-
+import { useTranslation } from "react-i18next";
+import { BtnChangeLng } from "@/feature/btnChangeLng";
 const MainPage = () => {
   const [value, setValue] = useState("");
   const [active, setActive] = useState(false);
+  const { t } = useTranslation();
 
   const handleOpen = () => {
     setActive(true);
@@ -20,6 +22,9 @@ const MainPage = () => {
 
   return (
     <div>
+      <BtnChangeLng currentLng="ru">
+        {t("Hello")}
+      </BtnChangeLng>
       <Link className="text-2xl" to="/about">
         Привет
       </Link>

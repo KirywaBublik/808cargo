@@ -6,6 +6,7 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useSubscribeMailing } from "../api";
+import { inputs } from "../lib/constants";
 
 export const SubscribeForm = () => {
   const mutate = useSubscribeMailing();
@@ -31,24 +32,14 @@ export const SubscribeForm = () => {
     >
       <p>ЗАКАЖИТЕ ЗВОНОК</p>
       <p className="mb-2">ПРЯМО СЕЙЧАС</p>
-
-      <Input
-        className={`cursor-text w-full ${errors.name != null ? `border-red-600 ` : ``}`}
-        placeholder="Ваше имя"
-        {...register("name")}
-      />
-      <Input
-        className={`cursor-text w-full ${errors.phone != null ? `border-red-600 ` : ``}`}
-        type="tel"
-        placeholder="Ваш телефон"
-        {...register("phone")}
-      />
-      <Input
-        type="text"
-        className={`cursor-text w-full ${errors.city != null ? `border-red-600 ` : ``}`}
-        placeholder="Ваш город"
-        {...register("city")}
-      />
+      {inputs.map((input, index) => (
+        <Input
+          key={index}
+          placeholder={input.placeholder}
+          className={`cursor-text w-full ${errors[input.register] != null ? `border-red-600 ` : ``}`}
+          {...register(input.register)}
+        />
+      ))}
       <Button
         type="submit"
         className="mt-2 w-full"

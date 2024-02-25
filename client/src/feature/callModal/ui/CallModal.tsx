@@ -1,6 +1,6 @@
 import { type FC } from "react";
 import { type ModalProps } from "../model/types";
-import { CloseSvg } from "@shared/assets/CloseSvg";
+import { close } from "@/shared/assets";
 const CallModal: FC<ModalProps> = ({
   active,
   handleClose,
@@ -32,7 +32,7 @@ const CallModal: FC<ModalProps> = ({
           className="absolute top-1 right-2"
           onClick={handleClose}
         >
-          <CloseSvg />
+          <img src={close} alt="" />
         </button>
         {children}
       </div>

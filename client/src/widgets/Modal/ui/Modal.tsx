@@ -1,19 +1,20 @@
-import CallModal from "@/feature/callModal/ui/CallModal";
-import { type ModalProps } from "../modal/types";
-
-import { removeOverflowHiddenFromBody } from "@/shared/lib/bodyOverflowHidden";
-import { Input, Button } from "@/shared/ui";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { useForm } from "react-hook-form";
+import CallModal from "@/feature/callModal/ui/CallModal";
+import { useSubscribeMailing } from "@/feature/subscribeForm/api";
+
+import { Input, Button } from "@/shared/ui";
+import { removeOverflowHiddenFromBody } from "@/shared/lib/bodyOverflowHidden";
+
 import {
   type LoginFormSchema,
   loginFormSchema,
 } from "../modal/modalSchema";
+import { type ModalProps } from "../modal/types";
 import { AccesSubscribe } from "./AccesSubscribe";
 import { icons } from "../modal/Icons";
-import { useSubscribeMailing } from "@/feature/subscribeForm/api";
-
+import { inputs } from "../lib/constants";
 export const Modal = ({
   active,
   setActive,
@@ -56,24 +57,14 @@ export const Modal = ({
           >
             <p>ЗАКАЖИТЕ ЗВОНОК</p>
             <p className="mb-2">ПРЯМО СЕЙЧАС</p>
-
-            <Input
-              className={`cursor-text ${errors.name != null ? `border-red-600 ` : ``}`}
-              placeholder="Ваше имя"
-              {...register("name")}
-            />
-            <Input
-              className={`cursor-text ${errors.phone != null ? `border-red-600 ` : ``}`}
-              type="tel"
-              placeholder="Ваш телефон"
-              {...register("phone")}
-            />
-            <Input
-              type="text"
-              className={`cursor-text ${errors.city != null ? `border-red-600 ` : ``}`}
-              placeholder="Ваш город"
-              {...register("city")}
-            />
+            {inputs.map((input, index) => (
+              <Input
+                key={index}
+                placeholder={input.placeholder}
+                className={`cursor-text ${errors[input.register] != null ? `border-red-600 ` : ``}`}
+                {...register(input.register)}
+              />
+            ))}
             <Button
               type="submit"
               className="mt-2 w-full"
