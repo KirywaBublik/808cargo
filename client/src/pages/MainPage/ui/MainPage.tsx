@@ -25,6 +25,9 @@ const MainPage = () => {
       <BtnChangeLng currentLng="ru">
         {t("Hello")}
       </BtnChangeLng>
+      <BtnChangeLng currentLng="en">
+        {t("Hello")}
+      </BtnChangeLng>
       <Link className="text-2xl" to="/about">
         Привет
       </Link>
