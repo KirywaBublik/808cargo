@@ -2,16 +2,30 @@ import hashlib
 import json
 
 from django.shortcuts import render
-
 from main.forms import UserInfoForm
 from main.models import User
 
 
 def export_form_data_to_json(form_data):
-    with open(
-        'fixtures/main/user_info.json', 'w', encoding='utf-8'
-    ) as json_file:
-        json.dump(form_data, json_file, ensure_ascii=False, indent=4)
+    file_path = 'fixtures/main/user_info.json'
+
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            existing_data = json.load(file)
+    except FileNotFoundError:
+        existing_data = []
+
+    data = {
+        'name': form_data['name'],
+        'lastname': form_data['lastname'],
+        'surname': form_data['surname'],
+        'city': form_data['city'],
+        'phone': form_data['phone'],
+    }
+    existing_data.append(data)
+
+    with open(file_path, 'w', encoding='utf-8') as file:
+        json.dump(existing_data, file, ensure_ascii=False)
 
 
 def encrypt_and_save_data(form_data):
