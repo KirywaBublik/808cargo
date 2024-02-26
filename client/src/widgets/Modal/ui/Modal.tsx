@@ -12,7 +12,7 @@ import {
   loginFormSchema,
 } from "../modal/modalSchema";
 import { type ModalProps } from "../modal/types";
-import { AccesSubscribe } from "./AccesSubscribe";
+import { AccessSubscribe } from "./AccesSubscribe";
 import { icons } from "../modal/Icons";
 import { inputs } from "../lib/constants";
 import { type FormEvent, useState } from "react";
@@ -64,7 +64,7 @@ export const Modal = ({
       {...props}
     >
       {mutate.isError || mutate.isSuccess ? (
-        <AccesSubscribe />
+        <AccessSubscribe />
       ) : (
         <>
           <form

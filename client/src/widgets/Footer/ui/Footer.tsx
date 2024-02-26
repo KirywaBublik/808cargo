@@ -4,6 +4,7 @@ import { useState } from "react";
 import { addOverflowHiddenToBody } from "@shared/lib/bodyOverflowHidden.ts";
 import { navLinks } from "@widgets/Header";
 import { Link } from "react-router-dom";
+import { logo } from "@shared/assets";
 
 export const Footer = () => {
   const [active, setActive] = useState(false);
@@ -12,10 +13,14 @@ export const Footer = () => {
     addOverflowHiddenToBody();
   };
   return (
-    <footer className="mb-5">
-      <div className="flex justify-between items-center pb-10 border-dashed border-b-2 border-white">
-        <div className="space-bold-font text-3xl">
-          808CARGO
+    <footer className="py-5 bg-bgInput">
+      <div className="max-w-[1170px] my-0 mx-auto flex justify-between items-center pb-10 border-dashed border-b-2 border-white">
+        <div className="space-bold-font text-lg">
+          <img
+            className="w-64 h-20"
+            src={logo}
+            alt=""
+          />
           <p className="pt-5 space-medium-14 max-w-96">
             В 808CARGO мы верим в предоставление
             нашим клиентам персонализированных и
@@ -23,7 +28,7 @@ export const Footer = () => {
             отвечающих их уникальным потребностям.
           </p>
         </div>
-        <div className="space-bold-font text-3xl">
+        <div className="space-bold-font text-lg">
           Навигация
           <br />
           <div className="pt-5 inline-flex flex-col gap-2">

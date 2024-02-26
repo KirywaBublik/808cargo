@@ -8,7 +8,7 @@ export const Button = ({
   return (
     <button
       className={classNames(
-        "bg-btn rounded-lg py-4 px-12 hover:bg-btnHover",
+        "min-w-60 min-h-8 bg-btn rounded-lg py-4 px-12 hover:bg-btnHover",
         className,
       )}
       {...props}
