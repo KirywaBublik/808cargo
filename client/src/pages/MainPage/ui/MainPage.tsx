@@ -1,16 +1,15 @@
 import { useState } from "react";
 import {
+  AboutUsSlim,
   Button,
   InfoTextMainPage,
 } from "@shared/ui";
 import { addOverflowHiddenToBody } from "@/shared/lib/bodyOverflowHidden";
 import { Modal } from "@/widgets/Modal/ui/Modal";
 import { useTranslation } from "react-i18next";
-import { BtnChangeLng } from "@/feature/btnChangeLng";
 const MainPage = () => {
   const [active, setActive] = useState(false);
   const { t } = useTranslation();
-
   const handleOpen = () => {
     setActive(true);
     addOverflowHiddenToBody();
@@ -18,25 +17,20 @@ const MainPage = () => {
 
   return (
     <div>
-      <BtnChangeLng currentLng="ru">
-        {t("Hello")}
-      </BtnChangeLng>
-      <BtnChangeLng currentLng="en">
-        {t("Hello")}
-      </BtnChangeLng>
       <InfoTextMainPage />
-      <div className="text-right -mt-12">
+      <div className="max-w-[1170px] my-0 mx-auto text-right -mt-12 mb-20">
         <Button
           onClick={handleOpen}
           className="space-medium-14"
         >
-          Заказать звонок
+          {t("Заказать звонок")}
         </Button>
         <Modal
           active={active}
           setActive={setActive}
         />
       </div>
+      <AboutUsSlim />
     </div>
   );
 };

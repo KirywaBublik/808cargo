@@ -39,8 +39,6 @@ html,
 body {
   height: 100%;
   width: 100%;
-  max-width: 1170px;
-  margin: 0 auto;
   line-height: 1;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
@@ -97,7 +95,6 @@ h6 {
 @layer utilities {
   .underline-effect {
     position: relative;
-    color: white;
     cursor: pointer;
     line-height: 1;
     text-decoration: none;

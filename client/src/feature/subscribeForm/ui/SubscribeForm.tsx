@@ -1,4 +1,4 @@
-import { Input, Button } from "@/shared/ui";
+import { Button, Input } from "@/shared/ui";
 import {
   type LoginFormSchema,
   loginFormSchema,
@@ -10,7 +10,6 @@ import { inputs } from "../lib/constants";
 
 export const SubscribeForm = () => {
   const mutate = useSubscribeMailing();
-
   const {
     formState: { errors },
     handleSubmit,
@@ -18,7 +17,6 @@ export const SubscribeForm = () => {
   } = useForm<LoginFormSchema>({
     resolver: zodResolver(loginFormSchema),
   });
-
   const onSubmit = (
     userData: LoginFormSchema,
   ) => {
@@ -26,9 +24,8 @@ export const SubscribeForm = () => {
   };
   return (
     <form
-      className="flex flex-col m-2 gap-3 items-center"
-      // eslint-disable-next-line @typescript-eslint/no-misused-promises
-      onSubmit={handleSubmit(onSubmit)}
+      className="flex flex-col m-2 gap-3 items-center pb-20"
+      onSubmit={() => handleSubmit(onSubmit)}
     >
       <p>ЗАКАЖИТЕ ЗВОНОК</p>
       <p className="mb-2">ПРЯМО СЕЙЧАС</p>

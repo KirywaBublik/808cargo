@@ -1,12 +1,11 @@
-import { type FC } from "react";
 import { type ModalProps } from "../model/types";
 import { close } from "@/shared/assets";
-const CallModal: FC<ModalProps> = ({
+const CallModal = ({
   active,
   handleClose,
   children,
   ...props
-}) => {
+}: ModalProps) => {
   const handleBackdropClick = (
     e: React.MouseEvent<
       HTMLDivElement,
