@@ -86,9 +86,9 @@ WSGI_APPLICATION = 'syncsound.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': '12345',
+        'NAME': 'visit',
+        'USER': 'visit',
+        'PASSWORD': '123456',
         'HOST': 'localhost',
         'PORT': '5432',
     }
