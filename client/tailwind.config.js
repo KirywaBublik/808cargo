@@ -9,6 +9,8 @@ export default {
         borderInput: "rgb(92, 108, 123)",
         bgInput: "rgb(9, 14, 35)",
         bgInputHover: "rgb(9, 14, 25)",
+        bg: "rgb(18, 29, 80)",
+        about: "rgb(14, 51, 203)",
       },
     },
   },

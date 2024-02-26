@@ -4,6 +4,7 @@ import telegramModal from "./icons/telegramModal.svg";
 import whatsappModal from "./icons/whatsappModal.svg";
 import telephoneModal from "./icons/telephoneModal.svg";
 import close from "./icons/close.svg";
+import logo from "./icons/logo.svg";
 export {
   notFound,
   buttonUp,
@@ -11,4 +12,5 @@ export {
   telephoneModal,
   whatsappModal,
   close,
+  logo,
 };
