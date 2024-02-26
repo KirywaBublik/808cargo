@@ -4,7 +4,7 @@ import { images } from "./images";
 
 const ContactPage = () => {
   return (
-    <div className="h-dvh w-full">
+    <div className="h-dvh max-w-[1170px] mx-auto w-full">
       <HrefBlock />
       <div className="flex justify-center items-center flex-col text-5xl">
         <h1 className="mb-4">Контакты</h1>
