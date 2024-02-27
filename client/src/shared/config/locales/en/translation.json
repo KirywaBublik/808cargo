@@ -2,5 +2,13 @@
   "En": "En",
   "Заказать звонок": "Request a call",
   "Contacts": "Contacts",
-  "Main": "Main"
+  "Main": "Main",
+  "Имя": "First name",
+  "Фамилия": "Last name",
+  "Отчество": "Middle name",
+  "Город": "City",
+  "Телефон": "Phone",
+  "Загрузка...": "Loading...",
+  "ЗАКАЖИТЕ ЗВОНОК": "ORDER A CALL",
+  "ПРЯМО СЕЙЧАС": "RIGHT NOW"
 }

@@ -16,12 +16,14 @@ import { AccessSubscribe } from "./AccesSubscribe";
 import { icons } from "../modal/Icons";
 import { inputs } from "../lib/constants";
 import { type FormEvent, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export const Modal = ({
   active,
   setActive,
   ...props
 }: ModalProps) => {
+  const { t } = useTranslation();
   const mutate = useSubscribeMailing();
   const [phoneNumber, setPhoneNumber] =
     useState();
@@ -72,12 +74,14 @@ export const Modal = ({
             // eslint-disable-next-line @typescript-eslint/no-misused-promises
             onSubmit={handleSubmit(onSubmit)}
           >
-            <p>ЗАКАЖИТЕ ЗВОНОК</p>
-            <p className="mb-2">ПРЯМО СЕЙЧАС</p>
+            <p>{t("ЗАКАЖИТЕ ЗВОНОК")}</p>
+            <p className="mb-2">
+              {t("ПРЯМО СЕЙЧАС")}
+            </p>
             {inputs.map((input, index) => (
               <Input
                 key={index}
-                placeholder={input.placeholder}
+                placeholder={t(input.placeholder)}
                 className={`cursor-text ${errors[input.register] != null ? `border-red-600 ` : ``}`}
                 {...register(input.register)}
               />
@@ -85,7 +89,7 @@ export const Modal = ({
             <Input
               type="tel"
               maxLength={11}
-              placeholder="Телефон"
+              placeholder={t("Телефон")}
               className={`w-full cursor-text`}
               value={phoneNumber}
               onInput={(e) => {
@@ -117,8 +121,8 @@ export const Modal = ({
               disabled={mutate.isPending}
             >
               {mutate.isPending
-                ? "Загрузка..."
-                : "Отправить"}
+                ? t("Загрузка...")
+                : t("Заказать звонок")}
             </Button>
           </form>
           <div className="flex justify-around mt-6">

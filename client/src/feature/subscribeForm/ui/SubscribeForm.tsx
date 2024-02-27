@@ -8,11 +8,13 @@ import { useForm } from "react-hook-form";
 import { useSubscribeMailing } from "../api";
 import { inputs } from "../lib/constants";
 import { type FormEvent, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export const SubscribeForm = () => {
   const mutate = useSubscribeMailing();
   const [phoneNumber, setPhoneNumber] =
     useState();
+  const { t } = useTranslation();
   const handlePhoneChange = (
     e: FormEvent<HTMLInputElement>,
   ) => {
@@ -46,12 +48,10 @@ export const SubscribeForm = () => {
       className="flex flex-col m-2 gap-3 items-center pb-20"
       onSubmit={() => handleSubmit(onSubmit)}
     >
-      <p>ЗАКАЖИТЕ ЗВОНОК</p>
-      <p className="mb-2">ПРЯМО СЕЙЧАС</p>
       {inputs.map((input, index) => (
         <Input
           key={index}
-          placeholder={input.placeholder}
+          placeholder={t(input.placeholder)}
           className={`w-full cursor-text ${errors[input.register] != null ? `border-red-600 ` : ``}`}
           {...register(input.register)}
         />
@@ -59,7 +59,7 @@ export const SubscribeForm = () => {
       <Input
         type="tel"
         maxLength={11}
-        placeholder="Телефон"
+        placeholder={t("Телефон")}
         value={phoneNumber}
         className={`w-full cursor-tex`}
         onInput={(e) => {
@@ -85,7 +85,7 @@ export const SubscribeForm = () => {
       >
         {mutate.isPending
           ? "Загрузка..."
-          : "Отправить"}
+          : t("Заказать звонок")}
       </Button>
     </form>
   );
