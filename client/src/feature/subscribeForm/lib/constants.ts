@@ -25,11 +25,6 @@ export const inputs: Input[] = [
     register: "patronymic",
   },
   {
-    type: "tel",
-    placeholder: "Телефон",
-    register: "phone",
-  },
-  {
     type: "text",
     placeholder: "Город",
     register: "city",

@@ -5,7 +5,6 @@ interface Input {
     | "firstName"
     | "lastName"
     | "patronymic"
-    | "phone"
     | "city";
 }
 export const inputs: Input[] = [
@@ -23,11 +22,6 @@ export const inputs: Input[] = [
     type: "text",
     placeholder: "Отчество",
     register: "patronymic",
-  },
-  {
-    type: "tel",
-    placeholder: "Телефон",
-    register: "phone",
   },
   {
     type: "text",

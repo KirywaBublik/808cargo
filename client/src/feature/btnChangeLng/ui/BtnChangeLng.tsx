@@ -14,6 +14,7 @@ export const BtnChangeLng = ({
     void i18n.changeLanguage(currentLng);
     saveState(i18n.language, "language");
   };
+
   return (
     <button
       className={classNames(

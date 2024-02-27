@@ -7,9 +7,28 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useSubscribeMailing } from "../api";
 import { inputs } from "../lib/constants";
+import { type FormEvent, useState } from "react";
 
 export const SubscribeForm = () => {
   const mutate = useSubscribeMailing();
+  const [phoneNumber, setPhoneNumber] =
+    useState();
+  const handlePhoneChange = (
+    e: FormEvent<HTMLInputElement>,
+  ) => {
+    const inputPhoneNumber = e.target.value;
+    const processedPhoneNumber =
+      inputPhoneNumber.replace(/[^\d]/g, "");
+
+    if (
+      processedPhoneNumber.length >= 1 &&
+      processedPhoneNumber.charAt(0) !== "7"
+    ) {
+      setPhoneNumber("+7" + processedPhoneNumber);
+    } else {
+      setPhoneNumber(processedPhoneNumber);
+    }
+  };
   const {
     formState: { errors },
     handleSubmit,
@@ -33,10 +52,32 @@ export const SubscribeForm = () => {
         <Input
           key={index}
           placeholder={input.placeholder}
-          className={`cursor-text w-full ${errors[input.register] != null ? `border-red-600 ` : ``}`}
+          className={`w-full cursor-text ${errors[input.register] != null ? `border-red-600 ` : ``}`}
           {...register(input.register)}
         />
       ))}
+      <Input
+        type="tel"
+        maxLength={11}
+        placeholder="Телефон"
+        value={phoneNumber}
+        className={`w-full cursor-tex`}
+        onInput={(e) => {
+          const processedPhoneNumber =
+            e.target.value.replace(/[^\d]/g, "");
+          if (
+            processedPhoneNumber.length >= 1 &&
+            processedPhoneNumber.charAt(0) !== "7"
+          ) {
+            e.target.value =
+              "+7" + processedPhoneNumber;
+          } else {
+            e.target.value = processedPhoneNumber;
+          }
+          handlePhoneChange(e);
+        }}
+        {...register("phone")}
+      />
       <Button
         type="submit"
         className="mt-2 w-full"
