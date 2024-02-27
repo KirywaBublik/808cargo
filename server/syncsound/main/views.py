@@ -1,5 +1,7 @@
 import hashlib
 import json
+from openpyxl import load_workbook
+from openpyxl import Workbook
 
 from django.shortcuts import render
 from main.forms import UserInfoForm
@@ -50,6 +52,29 @@ def encrypt_and_save_data(form_data):
     user_data.save()
 
 
+def export_form_data_to_xlsx(form_data):
+    file_path = 'fixtures/main/user_info.xlsx'
+
+    try:
+        load = load_workbook(file_path)
+    except FileNotFoundError:
+        load = Workbook()
+        load.create_sheet('users_info')
+
+    sheet = load['users_info']
+
+    data = [
+        form_data['name'],
+        form_data['lastname'],
+        form_data['surname'],
+        form_data['city'],
+        form_data['phone'],
+    ]
+
+    sheet.append(data)
+    load.save(file_path)
+
+
 def index(request):
     form = UserInfoForm(request.POST or None)
     if request.method == 'POST':
@@ -57,4 +82,5 @@ def index(request):
             form_data = form.cleaned_data
             export_form_data_to_json(form_data)
             encrypt_and_save_data(form_data)
+            export_form_data_to_xlsx(form_data)
     return render(request, 'main/index.html', {'form': form})
