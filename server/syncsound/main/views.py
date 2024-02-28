@@ -4,27 +4,50 @@ import json
 from openpyxl import load_workbook
 from openpyxl import Workbook
 
+from whatsapp_api_client_python import API
 from twilio.rest import Client
 from django.shortcuts import render
 from main.forms import UserInfoForm
 from main.models import User
 
+'''
+Second whatsapp message sender which using twilio API
+'''
+
+
+# def whatsapp_sender(form_data):
+#     message = f'Новый клиент:\n' \
+#           f'Имя: {form_data["name"]}\n' \
+#           f'Фамилия: {form_data["surname"]}\n' \
+#           f'Отчество: {form_data["lastname"]}\n' \
+#           f'Город: {form_data["city"]}\n' \
+#           f'Телефон: {form_data["phone"]}'
+#     account_sid = 'ACecb5a909200badaac46d19a0b3b80245'
+#     auth_token = 'eb4b67b2cf1c22daa99191fc9be4ae8e'
+#     client = Client(account_sid, auth_token)
+#     message = client.messages.create(
+#         to='whatsapp:+79190594454',
+#         from_='whatsapp:+14155238886',
+#         body=message,
+#     )
+
 
 def whatsapp_sender(form_data):
-    message = f'Новый клиент:\n' \
-          f'Имя: {form_data["name"]}\n' \
-          f'Фамилия: {form_data["surname"]}\n' \
-          f'Отчество: {form_data["lastname"]}\n' \
-          f'Город: {form_data["city"]}\n' \
-          f'Телефон: {form_data["phone"]}'
-    account_sid = 'ACecb5a909200badaac46d19a0b3b80245'
-    auth_token = 'eb4b67b2cf1c22daa99191fc9be4ae8e'
-    client = Client(account_sid, auth_token)
-    message = client.messages.create(
-        to='whatsapp:+79190594454',
-        from_='whatsapp:+14155238886',
-        body=message,
-    )
+    try:
+        if "IdInstance" in locals() or "ApiTokenInstance" in locals():
+            return
+
+        greenAPI = API.GreenAPI("1103910724", "e7aa24ce04884d8dab47c5d9693ee573785f5a82425748d9a3")
+        payload = f'Имя: {form_data["name"]}\n' \
+            f'Фамилия: {form_data["surname"]}\n' \
+            f'Отчество: {form_data["lastname"]}\n' \
+            f'Город: {form_data["city"]}\n' \
+            f'Телефон: {form_data["phone"]}\r\n'
+
+        greenAPI.sending.sendMessage("79934766772@c.us", payload)
+
+    except Exception as e:
+        print(f'An error occurred: {str(e)}')
 
 
 def export_form_data_to_json(form_data):
