@@ -1,11 +1,54 @@
 import hashlib
 import json
+
 from openpyxl import load_workbook
 from openpyxl import Workbook
 
+from whatsapp_api_client_python import API
+from twilio.rest import Client
 from django.shortcuts import render
 from main.forms import UserInfoForm
 from main.models import User
+
+
+'''
+Second whatsapp message sender which using twilio API
+'''
+
+
+# def whatsapp_sender(form_data):
+#     message = f'Новый клиент:\n' \
+#           f'Имя: {form_data["name"]}\n' \
+#           f'Фамилия: {form_data["surname"]}\n' \
+#           f'Отчество: {form_data["lastname"]}\n' \
+#           f'Город: {form_data["city"]}\n' \
+#           f'Телефон: {form_data["phone"]}'
+#     account_sid = 'ACecb5a909200badaac46d19a0b3b80245'
+#     auth_token = 'eb4b67b2cf1c22daa99191fc9be4ae8e'
+#     client = Client(account_sid, auth_token)
+#     message = client.messages.create(
+#         to='whatsapp:+79934766772',
+#         from_='whatsapp:+14155238886',
+#         body=message,
+#     )
+
+
+def whatsapp_sender(form_data):
+    try:
+        if "IdInstance" in locals() or "ApiTokenInstance" in locals():
+            return
+
+        greenAPI = API.GreenAPI("1103910724", "e7aa24ce04884d8dab47c5d9693ee573785f5a82425748d9a3")
+        payload = f'Имя: {form_data["name"]}\n' \
+            f'Фамилия: {form_data["surname"]}\n' \
+            f'Отчество: {form_data["lastname"]}\n' \
+            f'Город: {form_data["city"]}\n' \
+            f'Телефон: {form_data["phone"]}\r\n'
+
+        greenAPI.sending.sendMessage("79934766772@c.us", payload)
+
+    except Exception as e:
+        print(f'An error occurred: {str(e)}')
 
 
 def export_form_data_to_json(form_data):
@@ -29,27 +72,7 @@ def export_form_data_to_json(form_data):
     with open(file_path, 'w', encoding='utf-8') as file:
         json.dump(existing_data, file, ensure_ascii=False)
 
-
-def encrypt_and_save_data(form_data):
-    hashed_first_name = hashlib.sha256(
-        form_data['name'].encode()).hexdigest()
-    hashed_last_name = hashlib.sha256(
-        form_data['lastname'].encode()).hexdigest()
-    hashed_sur_name = hashlib.sha256(
-        form_data['surname'].encode()).hexdigest()
-    hashed_city = hashlib.sha256(
-        form_data['city'].encode()).hexdigest()
-    hashed_phone = hashlib.sha256(
-        form_data['phone'].encode()).hexdigest()
-
-    user_data = User(
-        name=hashed_first_name,
-        lastname=hashed_last_name,
-        surname=hashed_sur_name,
-        city=hashed_city,
-        phone=hashed_phone,
-    )
-    user_data.save()
+    whatsapp_sender(data)
 
 
 def export_form_data_to_xlsx(form_data):
@@ -73,6 +96,28 @@ def export_form_data_to_xlsx(form_data):
 
     sheet.append(data)
     load.save(file_path)
+
+
+def encrypt_and_save_data(form_data):
+    hashed_first_name = hashlib.sha256(
+        form_data['name'].encode()).hexdigest()
+    hashed_last_name = hashlib.sha256(
+        form_data['lastname'].encode()).hexdigest()
+    hashed_sur_name = hashlib.sha256(
+        form_data['surname'].encode()).hexdigest()
+    hashed_city = hashlib.sha256(
+        form_data['city'].encode()).hexdigest()
+    hashed_phone = hashlib.sha256(
+        form_data['phone'].encode()).hexdigest()
+
+    user_data = User(
+        name=hashed_first_name,
+        lastname=hashed_last_name,
+        surname=hashed_sur_name,
+        city=hashed_city,
+        phone=hashed_phone,
+    )
+    user_data.save()
 
 
 def index(request):
