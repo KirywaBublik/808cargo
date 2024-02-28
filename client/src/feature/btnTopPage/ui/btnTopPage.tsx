@@ -1,11 +1,6 @@
 import { buttonUp } from "@shared/assets";
+import { scrollTo } from "@shared/lib";
 export const BtnTopPage = () => {
-  const scrollTo = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
   return (
     <div className="cursor-pointer fixed bottom-10 right-10">
       <button
