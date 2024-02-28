@@ -26,7 +26,7 @@ Second whatsapp message sender which using twilio API
 #     auth_token = 'eb4b67b2cf1c22daa99191fc9be4ae8e'
 #     client = Client(account_sid, auth_token)
 #     message = client.messages.create(
-#         to='whatsapp:+79190594454',
+#         to='whatsapp:+79934766772',
 #         from_='whatsapp:+14155238886',
 #         body=message,
 #     )
