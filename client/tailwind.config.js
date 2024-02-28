@@ -11,6 +11,8 @@ export default {
         bgInputHover: "rgb(9, 14, 25)",
         bg: "rgb(18, 29, 80)",
         about: "rgb(14, 51, 203)",
+        blueVideo: "rgb(31, 69, 228)",
+        bgReviews: "rgb(237, 240, 243)",
       },
     },
   },

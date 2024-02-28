@@ -3,21 +3,36 @@ import { Modal } from "@widgets/Modal/ui/Modal.tsx";
 import { useState } from "react";
 import { addOverflowHiddenToBody } from "@shared/lib/bodyOverflowHidden.ts";
 import { navLinks } from "@widgets/Header";
-import { Link } from "react-router-dom";
+import {
+  Link,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import { logo } from "@shared/assets";
+import { scrollTo } from "@shared/lib";
 
 export const Footer = () => {
   const [active, setActive] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
   const handleOpen = () => {
     setActive(true);
     addOverflowHiddenToBody();
   };
+
   return (
     <footer className="py-5 bg-bgInput">
       <div className="max-w-[1170px] my-0 mx-auto flex justify-between items-center pb-10 border-dashed border-b-2 border-white">
         <div className="space-bold-font text-lg">
           <img
-            className="w-64 h-20"
+            onClick={
+              location.pathname === "/"
+                ? scrollTo
+                : () => {
+                    navigate("/");
+                  }
+            }
+            className="w-64 h-20 cursor-pointer"
             src={logo}
             alt=""
           />
@@ -35,6 +50,11 @@ export const Footer = () => {
             {navLinks.map(
               ({ id, name, path }) => (
                 <Link
+                  onClick={
+                    id === 0
+                      ? scrollTo
+                      : undefined
+                  }
                   key={id}
                   className="space-medium-14"
                   to={path}

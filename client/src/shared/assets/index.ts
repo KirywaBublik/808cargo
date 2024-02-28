@@ -5,6 +5,8 @@ import whatsappModal from "./icons/whatsappModal.svg";
 import telephoneModal from "./icons/telephoneModal.svg";
 import close from "./icons/close.svg";
 import logo from "./icons/logo.svg";
+import video from "./icons/video.mp4";
+import star from "./icons/star.svg";
 export {
   notFound,
   buttonUp,
@@ -13,4 +15,6 @@ export {
   whatsappModal,
   close,
   logo,
+  video,
+  star,
 };

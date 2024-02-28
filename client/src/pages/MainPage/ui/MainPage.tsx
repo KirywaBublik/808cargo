@@ -3,10 +3,12 @@ import {
   AboutUsSlim,
   Button,
   InfoTextMainPage,
+  Reviews,
 } from "@shared/ui";
 import { addOverflowHiddenToBody } from "@/shared/lib/bodyOverflowHidden";
 import { Modal } from "@/widgets/Modal/ui/Modal";
 import { useTranslation } from "react-i18next";
+import { VideoPlayer } from "@/feature/videoPlayer";
 const MainPage = () => {
   const [active, setActive] = useState(false);
   const { t } = useTranslation();
@@ -31,6 +33,8 @@ const MainPage = () => {
         />
       </div>
       <AboutUsSlim />
+      <VideoPlayer />
+      <Reviews />
     </div>
   );
 };
