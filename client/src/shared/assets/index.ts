@@ -7,6 +7,10 @@ import close from "./icons/close.svg";
 import logo from "./icons/logo.svg";
 import video from "./icons/video.mp4";
 import star from "./icons/star.svg";
+import serviceImage1 from "./icons/serviceImage1.svg";
+import step1 from "./icons/step1.svg";
+import step2 from "./icons/step2.svg";
+import step3 from "./icons/step3.svg";
 export {
   notFound,
   buttonUp,
@@ -17,4 +21,8 @@ export {
   logo,
   video,
   star,
+  serviceImage1,
+  step1,
+  step2,
+  step3,
 };
