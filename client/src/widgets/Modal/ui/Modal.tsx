@@ -15,7 +15,11 @@ import { type ModalProps } from "../modal/types";
 import { AccessSubscribe } from "./AccesSubscribe";
 import { icons } from "../modal/Icons";
 import { inputs } from "../lib/constants";
-import { type FormEvent, useState } from "react";
+import {
+  type FormEvent,
+  useState,
+  type ChangeEvent,
+} from "react";
 import { useTranslation } from "react-i18next";
 
 export const Modal = ({
@@ -26,7 +30,7 @@ export const Modal = ({
   const { t } = useTranslation();
   const mutate = useSubscribeMailing();
   const [phoneNumber, setPhoneNumber] =
-    useState();
+    useState<string>();
   const {
     formState: { errors },
     handleSubmit,
@@ -47,7 +51,9 @@ export const Modal = ({
   const handlePhoneChange = (
     e: FormEvent<HTMLInputElement>,
   ) => {
-    const inputPhoneNumber = e.target.value;
+    const inputPhoneNumber = (
+      e.target as HTMLInputElement
+    ).value;
     const processedPhoneNumber =
       inputPhoneNumber.replace(/[^\d]/g, "");
     if (
@@ -92,7 +98,9 @@ export const Modal = ({
               placeholder={t("Телефон")}
               className={`w-full cursor-text`}
               value={phoneNumber}
-              onInput={(e) => {
+              onInput={(
+                e: ChangeEvent<HTMLInputElement>,
+              ) => {
                 const processedPhoneNumber =
                   e.target.value.replace(
                     /[^\d]/g,

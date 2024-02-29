@@ -5,7 +5,7 @@ import { InfoTextMainPage } from "@shared/ui/Landing/InfoTextMainPage/InfoTextMa
 import { AboutUsSlim } from "./Landing/AboutUsSlim/ui/AboutUsSlim.tsx";
 import { SliderAboutUsSlim } from "./Landing/AboutUsSlim/ui/slider/ui/SliderAboutUsSlim.tsx";
 import { Reviews } from "./Reviews/ui/Reviews.tsx";
-
+import { OurServices } from "./OurServices/index.ts";
 export {
   Button,
   Input,
@@ -14,4 +14,5 @@ export {
   AboutUsSlim,
   SliderAboutUsSlim,
   Reviews,
+  OurServices,
 };
