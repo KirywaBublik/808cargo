@@ -9,6 +9,9 @@ import { addOverflowHiddenToBody } from "@/shared/lib/bodyOverflowHidden";
 import { Modal } from "@/widgets/Modal/ui/Modal";
 import { useTranslation } from "react-i18next";
 import { VideoPlayer } from "@/feature/videoPlayer";
+import { OurServices } from "@/shared/ui/OurServices";
+import { Seporator } from "@/shared/ui/Seporator";
+import { HowItWork } from "@/shared/ui/HowItWork";
 const MainPage = () => {
   const [active, setActive] = useState(false);
   const { t } = useTranslation();
@@ -33,6 +36,9 @@ const MainPage = () => {
         />
       </div>
       <AboutUsSlim />
+      <OurServices />
+      <Seporator />
+      <HowItWork />
       <VideoPlayer />
       <Reviews />
     </div>

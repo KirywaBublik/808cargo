@@ -1,0 +1,18 @@
+<svg width="76.000000" height="76.000000" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip20_403">
+			<rect id="package" width="40.000000" height="40.000000" transform="translate(18.000000 18.000000)" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect id="Icon" rx="8.000000" width="76.000000" height="76.000000" fill="#0E33CB" fill-opacity="1.000000"/>
+	<rect id="package" width="40.000000" height="40.000000" transform="translate(18.000000 18.000000)" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip20_403)">
+		<path id="Vector" d="M45.5 33.6665L30.5 25.0166" stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="2.000000" stroke-linejoin="round" stroke-linecap="round"/>
+		<path id="Vector" d="M53 31.3335C52.9994 30.749 52.8451 30.1748 52.5526 29.6687C52.26 29.1626 51.8396 28.7424 51.3334 28.4502L39.6666 21.7834C39.1599 21.491 38.5851 21.3369 38 21.3369C37.4149 21.3369 36.8401 21.491 36.3334 21.7834L24.6666 28.4502C24.1604 28.7424 23.74 29.1626 23.4474 29.6687C23.1549 30.1748 23.0006 30.749 23 31.3335L23 44.6667C23.0006 45.2515 23.1549 45.8254 23.4474 46.3315C23.74 46.8376 24.1604 47.2578 24.6666 47.55L36.3334 54.2168C36.8401 54.5093 37.4149 54.6633 38 54.6633C38.5851 54.6633 39.1599 54.5093 39.6666 54.2168L51.3334 47.55C51.8396 47.2578 52.26 46.8376 52.5526 46.3315C52.8451 45.8254 52.9994 45.2515 53 44.6667L53 31.3335Z" stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="2.000000" stroke-linejoin="round"/>
+		<path id="Vector" d="M23.45 29.6001L38 38.0168L52.5499 29.6001" stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="2.000000" stroke-linejoin="round" stroke-linecap="round"/>
+		<path id="Vector" d="M38 54.8L38 38" stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="2.000000" stroke-linejoin="round" stroke-linecap="round"/>
+	</g>
+</svg>
