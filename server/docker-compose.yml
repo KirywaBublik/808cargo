@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  python: 
+    build: .
+    ports:
+      - 8001:8000
+    links:
+      - db
+
+  db:
+    image: postgres
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: visit
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: visit
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    container_name: backend
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:

@@ -9,28 +9,30 @@ from twilio.rest import Client
 from django.shortcuts import render
 from main.forms import UserInfoForm
 from main.models import User
+from rest_framework.views import APIView
 
+from .consts import TELE_NUM, API_TOKEN_INSTANCE, ID_INSTANCE
 
 '''
 Second whatsapp message sender which using twilio API
 '''
 
-
-# def whatsapp_sender(form_data):
-#     message = f'Новый клиент:\n' \
-#           f'Имя: {form_data["name"]}\n' \
-#           f'Фамилия: {form_data["surname"]}\n' \
-#           f'Отчество: {form_data["lastname"]}\n' \
-#           f'Город: {form_data["city"]}\n' \
-#           f'Телефон: {form_data["phone"]}'
-#     account_sid = 'ACecb5a909200badaac46d19a0b3b80245'
-#     auth_token = 'eb4b67b2cf1c22daa99191fc9be4ae8e'
-#     client = Client(account_sid, auth_token)
-#     message = client.messages.create(
-#         to='whatsapp:+79934766772',
-#         from_='whatsapp:+14155238886',
-#         body=message,
-#     )
+# class VisitCard(APIView):
+    # def whatsapp_sender(form_data):
+    #     message = f'Новый клиент:\n' \
+    #           f'Имя: {form_data["name"]}\n' \
+    #           f'Фамилия: {form_data["surname"]}\n' \
+    #           f'Отчество: {form_data["lastname"]}\n' \
+    #           f'Город: {form_data["city"]}\n' \
+    #           f'Телефон: {form_data["phone"]}'
+    #     account_sid = 'SID'
+    #     auth_token = 'AUTH_TOKEN'
+    #     client = Client(account_sid, auth_token)
+    #     message = client.messages.create(
+    #         to='whatsapp:+TELE_NUM',
+    #         from_='whatsapp:+14155238886',
+    #         body=message,
+    #     )
 
 
 def whatsapp_sender(form_data):
@@ -38,14 +40,14 @@ def whatsapp_sender(form_data):
         if "IdInstance" in locals() or "ApiTokenInstance" in locals():
             return
 
-        greenAPI = API.GreenAPI("1103910724", "e7aa24ce04884d8dab47c5d9693ee573785f5a82425748d9a3")
+        greenAPI = API.GreenAPI(ID_INSTANCE, API_TOKEN_INSTANCE)
         payload = f'Имя: {form_data["name"]}\n' \
-            f'Фамилия: {form_data["surname"]}\n' \
-            f'Отчество: {form_data["lastname"]}\n' \
-            f'Город: {form_data["city"]}\n' \
-            f'Телефон: {form_data["phone"]}\r\n'
+                    f'Фамилия: {form_data["surname"]}\n' \
+                    f'Отчество: {form_data["lastname"]}\n' \
+                    f'Город: {form_data["city"]}\n' \
+                    f'Телефон: {form_data["phone"]}\r\n'
 
-        greenAPI.sending.sendMessage("79934766772@c.us", payload)
+        greenAPI.sending.sendMessage(f"{TELE_NUM}@c.us", payload)
 
     except Exception as e:
         print(f'An error occurred: {str(e)}')
