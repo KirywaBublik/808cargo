@@ -7,18 +7,24 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useSubscribeMailing } from "../api";
 import { inputs } from "../lib/constants";
-import { type FormEvent, useState } from "react";
+import {
+  type FormEvent,
+  useState,
+  type ChangeEvent,
+} from "react";
 import { useTranslation } from "react-i18next";
 
 export const SubscribeForm = () => {
   const mutate = useSubscribeMailing();
   const [phoneNumber, setPhoneNumber] =
-    useState();
+    useState<string>();
   const { t } = useTranslation();
   const handlePhoneChange = (
     e: FormEvent<HTMLInputElement>,
   ) => {
-    const inputPhoneNumber = e.target.value;
+    const inputPhoneNumber = (
+      e.target as HTMLInputElement
+    ).value;
     const processedPhoneNumber =
       inputPhoneNumber.replace(/[^\d]/g, "");
 
@@ -62,7 +68,9 @@ export const SubscribeForm = () => {
         placeholder={t("Телефон")}
         value={phoneNumber}
         className={`w-full cursor-tex`}
-        onInput={(e) => {
+        onInput={(
+          e: ChangeEvent<HTMLInputElement>,
+        ) => {
           const processedPhoneNumber =
             e.target.value.replace(/[^\d]/g, "");
           if (
