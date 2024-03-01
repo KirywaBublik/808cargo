@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-cdaxm9br0ln2fj04#ie9kcl8v8ahf1595b*#4y0oq7jo2$3o1e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
-    # 'rest_framework',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -51,13 +51,13 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# REST_FRAMEFORK = {'DEFAULT_PERMISSION_CLASSES' :
-                 # ['rest_framework.permission.AllowAny']}
+REST_FRAMEFORK = {'DEFAULT_PERMISSION_CLASSES':
+                  ['rest_framework.permission.AllowAny']}
 
-# CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'syncsound.urls'
 
@@ -91,7 +91,7 @@ DATABASES = {
         'NAME': 'visit',
         'USER': 'visit',
         'PASSWORD': '123456',
-        'HOST': 'db',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
