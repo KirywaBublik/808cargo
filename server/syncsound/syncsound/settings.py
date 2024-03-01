@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
-    # 'rest_framework',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -51,13 +51,13 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# REST_FRAMEFORK = {'DEFAULT_PERMISSION_CLASSES' :
-                 # ['rest_framework.permission.AllowAny']}
+REST_FRAMEFORK = {'DEFAULT_PERMISSION_CLASSES' :
+                  ['rest_framework.permission.AllowAny']}
 
-# CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'syncsound.urls'
 
