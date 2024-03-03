@@ -59,7 +59,7 @@ export const Header = () => {
           />
         </div>
         <div
-          className={`rounded-b-lg border-solid border-b-2 py-12 border-sky-100 transition-all ease-in-out fixed lg:static lg:border-none left-0 p-4 flex flex-col items-center space-medium-18 bg-[#121d50] ${isOpen ? "top-0" : "top-[-420px]"} h-[33vh] w-full gap-6 lg:flex-row lg:h-auto lg:w-auto`}
+          className={`rounded-b-lg border-solid border-b-2 py-12 border-sky-100 transition-all ease-in-out fixed lg:static lg:border-none left-0 p-4 flex flex-col items-center space-medium-18 bg-bgInput lg:bg-[#121d50] ${isOpen ? "top-0" : "top-[-420px]"} h-[33vh] w-full gap-6 lg:flex-row lg:h-auto lg:w-auto`}
         >
           {navLinks.map(({ id, name, path }) => (
             <Link
