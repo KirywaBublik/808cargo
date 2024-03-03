@@ -22,7 +22,7 @@ export const Footer = () => {
 
   return (
     <footer className="py-5 bg-bgInput">
-      <div className="max-w-[1170px] my-0 mx-auto flex justify-between items-center pb-10 border-dashed border-b-2 border-white">
+      <div className="max-w-[1170px] my-0 mx-auto flex flex-col lg:flex-row justify-between items-center pb-10 border-dashed border-b-2 border-white">
         <div className="space-bold-font text-lg">
           <img
             onClick={
