@@ -51,7 +51,7 @@ export const SubscribeForm = () => {
   };
   return (
     <form
-      className="flex flex-col m-2 gap-3 items-center pb-20"
+      className="flex flex-col  gap-3 items-center pb-20"
       onSubmit={() => handleSubmit(onSubmit)}
     >
       {inputs.map((input, index) => (

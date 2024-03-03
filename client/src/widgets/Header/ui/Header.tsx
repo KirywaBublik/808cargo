@@ -35,13 +35,13 @@ export const Header = () => {
 
   return (
     <header>
-      <nav className="relative max-w-[1170px] w-full my-0 mx-auto flex justify-between items-center py-7">
+      <nav className="relative max-w-[1170px] w-full my-0 mx-auto flex justify-between items-center py-7 px-3 md:px-0">
         <Link
           className="space-bold-font text-3xl"
           to="/"
         >
           <img
-            className="w-80 h-20"
+            className="w-60 h-15 sm:w-80 sm:h-20 "
             src={logo}
             alt=""
           />
@@ -59,7 +59,7 @@ export const Header = () => {
           />
         </div>
         <div
-          className={`rounded-b-lg border-solid border-b-2 py-12 border-sky-100 transition-all ease-in-out fixed lg:static lg:border-none left-0 p-4 flex flex-col items-center space-medium-18 bg-bgInput lg:bg-[#121d50] ${isOpen ? "top-0" : "top-[-420px]"} h-[33vh] w-full gap-6 lg:flex-row lg:h-auto lg:w-auto`}
+          className={`rounded-b-lg border-solid  border-b-2 py-12 border-sky-100 transition-all ease-in-out fixed lg:static lg:border-none left-0 p-4 flex flex-col items-center space-medium-18 bg-bgInput lg:bg-[#121d50] ${isOpen ? "top-0" : "top-[-420px]"} h-auto w-full gap-6 lg:flex-row lg:h-auto lg:w-auto`}
         >
           {navLinks.map(({ id, name, path }) => (
             <Link

@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 const ContactPage = () => {
   const { t } = useTranslation();
   return (
-    <div className="h-dvh max-w-[1170px] mx-auto w-full">
+    <div className="h-dvh max-w-[1170px] mx-auto w-full px-3 md:px-0">
       <HrefBlock pathes={["Main", "Contacts"]} />
       <div className="flex justify-center items-center flex-col text-5xl">
         <h1 className="mb-4">{t("Contacts")}</h1>
