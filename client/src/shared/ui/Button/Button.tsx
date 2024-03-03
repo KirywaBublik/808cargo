@@ -8,7 +8,7 @@ export const Button = ({
   return (
     <button
       className={classNames(
-        "min-w-60 min-h-8 bg-btn rounded-lg py-4 px-12 hover:bg-btnHover",
+        "max-w-60 w-full text-nowrap px-5 md:px-12 min-h-8 bg-btn rounded-lg py-4  hover:bg-btnHover",
         className,
       )}
       {...props}
