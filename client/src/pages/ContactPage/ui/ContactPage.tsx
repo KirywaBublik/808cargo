@@ -14,7 +14,7 @@ const ContactPage = () => {
           {t("ПРЯМО СЕЙЧАС")}
         </p>
       </div>
-      <div className="w-[400px] mx-auto">
+      <div className="max-w-[400px] w-full mx-auto">
         <SubscribeForm />
       </div>
     </div>
