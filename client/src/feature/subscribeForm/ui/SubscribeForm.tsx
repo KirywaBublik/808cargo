@@ -1,99 +1,61 @@
-import { Button, Input } from "@/shared/ui";
-import {
-  type LoginFormSchema,
-  loginFormSchema,
-} from "@/widgets/Modal/modal/modalSchema";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { useSubscribeMailing } from "../api";
-import { inputs } from "../lib/constants";
-import {
-  type FormEvent,
-  useState,
-  type ChangeEvent,
-} from "react";
+import { Button, Input } from "@shared/ui";
 import { useTranslation } from "react-i18next";
+import axios from "axios";
+import { inputs } from "@/feature/subscribeForm/model/constants.ts";
+
+interface LoginFields {
+  name: string;
+  surname?: string;
+  city?: string;
+  products: string;
+  phone: number;
+}
 
 export const SubscribeForm = () => {
-  const mutate = useSubscribeMailing();
-  const [phoneNumber, setPhoneNumber] =
-    useState<string>();
   const { t } = useTranslation("contacts");
-  const handlePhoneChange = (
-    e: FormEvent<HTMLInputElement>,
-  ) => {
-    const inputPhoneNumber = (
-      e.target as HTMLInputElement
-    ).value;
-    const processedPhoneNumber =
-      inputPhoneNumber.replace(/[^\d]/g, "");
 
-    if (
-      processedPhoneNumber.length >= 1 &&
-      processedPhoneNumber.charAt(0) !== "7"
-    ) {
-      setPhoneNumber("+7" + processedPhoneNumber);
-    } else {
-      setPhoneNumber(processedPhoneNumber);
+  const { register, handleSubmit, reset } =
+    useForm<LoginFields>();
+  const onSubmit = handleSubmit(async (data) => {
+    try {
+      await axios.post(
+        "https://affdf12e9349600c.mokky.dev/users",
+        { ...data },
+      );
+      reset();
+      alert("Запрос отправлен успешно!");
+    } catch (error) {
+      alert(
+        "Ошибка запроса :(, мы уже разбираемся что не так",
+      );
     }
-  };
-  const {
-    formState: { errors },
-    handleSubmit,
-    register,
-  } = useForm<LoginFormSchema>({
-    resolver: zodResolver(loginFormSchema),
   });
-  const onSubmit = (
-    userData: LoginFormSchema,
-  ) => {
-    mutate.mutate(userData);
-  };
+
   return (
     <form
-      className="flex flex-col  gap-3 items-center pb-20"
-      onSubmit={() => handleSubmit(onSubmit)}
+      onSubmit={onSubmit}
+      className="flex flex-col items-center gap-2"
     >
-      {inputs.map((input, index) => (
-        <Input
-          key={index}
-          placeholder={t(input.placeholder)}
-          className={`w-full cursor-text ${errors[input.register] != null ? `border-red-600 ` : ``}`}
-          {...register(input.register)}
-        />
-      ))}
-      <Input
-        type="tel"
-        maxLength={11}
-        placeholder={t("Телефон")}
-        value={phoneNumber}
-        className={`w-full cursor-tex`}
-        onInput={(
-          e: ChangeEvent<HTMLInputElement>,
-        ) => {
-          const processedPhoneNumber =
-            e.target.value.replace(/[^\d]/g, "");
-          if (
-            processedPhoneNumber.length >= 1 &&
-            processedPhoneNumber.charAt(0) !== "7"
-          ) {
-            e.target.value =
-              "+7" + processedPhoneNumber;
-          } else {
-            e.target.value = processedPhoneNumber;
-          }
-          handlePhoneChange(e);
-        }}
-        {...register("phone")}
-      />
+      {inputs.map(
+        ({ name, placeholder, required }) => (
+          <Input
+            key={name}
+            inputProps={{
+              placeholder,
+              type: "text",
+              ...register(name, {
+                required,
+              }),
+            }}
+          />
+        ),
+      )}
       <Button
         type="submit"
         className="mt-10 w-full"
-        disabled={mutate.isPending}
       >
-        {mutate.isPending
-          ? t("Загрузка...")
-          : t("Заказать звонок")}
+        {t("Заказать звонок")}
       </Button>
     </form>
   );
