@@ -5,4 +5,4 @@ from . models import User
 class VisitSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ("id", "name", "surname", "lastname", "phone", "city")
+        fields = ("name", "surname", "phone", "city", "products")

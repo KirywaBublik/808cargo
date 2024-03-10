@@ -24,7 +24,7 @@ export const SubscribeForm = () => {
   const onSubmit = handleSubmit(async (data) => {
     try {
       await axios.post(
-        "https://affdf12e9349600c.mokky.dev/users",
+        "http://localhost:8000/backend/",
         { ...data },
       );
       reset();

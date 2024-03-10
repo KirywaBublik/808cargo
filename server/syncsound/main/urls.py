@@ -5,5 +5,5 @@ from . views import VisitCard
 app_name = 'main'
 
 urlpatterns = [
-    path('', VisitCard.as_view(), name='index'),
+    path('backend/', VisitCard.as_view(), name='index'),
 ]
