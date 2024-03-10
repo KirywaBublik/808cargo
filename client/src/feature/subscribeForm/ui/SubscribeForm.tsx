@@ -18,7 +18,7 @@ export const SubscribeForm = () => {
   const mutate = useSubscribeMailing();
   const [phoneNumber, setPhoneNumber] =
     useState<string>();
-  const { t } = useTranslation();
+  const { t } = useTranslation("contacts");
   const handlePhoneChange = (
     e: FormEvent<HTMLInputElement>,
   ) => {
@@ -92,7 +92,7 @@ export const SubscribeForm = () => {
         disabled={mutate.isPending}
       >
         {mutate.isPending
-          ? "Загрузка..."
+          ? t("Загрузка...")
           : t("Заказать звонок")}
       </Button>
     </form>

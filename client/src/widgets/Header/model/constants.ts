@@ -1,5 +1,3 @@
-import { type Language } from "@shared/config/i18n/types.ts";
-
 export const navLinks = [
   {
     id: 0,
@@ -22,12 +20,8 @@ export const navLinks = [
     path: "/contacts",
   },
 ];
-interface btnChangeTypes {
-  id: number;
-  lang: Language;
-}
 
-export const btnChange: btnChangeTypes[] = [
+export const btnChange = [
   {
     id: 0,
     lang: "ru",

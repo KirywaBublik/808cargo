@@ -12,7 +12,10 @@ import classNames from "classnames";
 import { useLocalStorageState } from "@widgets/Header/lib/useCurrentBtnSession.ts";
 import { useState } from "react";
 export const Header = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation("header");
+  const toggle = (changeLanguage: string) => {
+    void i18n.changeLanguage(changeLanguage);
+  };
   const [isOpen, setIsOpen] =
     useState<boolean>(false);
   const currentBtn = (id: number) => {
@@ -67,7 +70,7 @@ export const Header = () => {
               to={path}
               key={id}
             >
-              {name}
+              {t(`${name}`)}
             </Link>
           ))}
           <div className="flex gap-6">
@@ -84,7 +87,9 @@ export const Header = () => {
                     selectedBtn === id &&
                       "text-btn ",
                   )}
-                  currentLng={lang}
+                  onClick={() => {
+                    toggle(lang);
+                  }}
                 >
                   {t(
                     `${lang.charAt(0).toUpperCase() + lang.slice(1)}`,
