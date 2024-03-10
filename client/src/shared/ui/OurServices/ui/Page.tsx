@@ -6,12 +6,8 @@ export const OurServices = () => {
       <div className="max-w-[1170px] mx-auto py-[110px] flex flex-col items-center">
         <div className="mb-16 text-center">
           <h2 className="text-blue-800 mb-3">
-            НАШИ СЕРВИСЫ
+            НАШИ УСЛУГИ
           </h2>
-          <p className="text-5xl font-bold text-center uppercase">
-            ЭФФЕКТИВНАЯ И НАДЕЖНАЯ <br />
-            ДОСТАВКА С БЫСТРЫМ ХОДОМ
-          </p>
         </div>
         <div className="flex flex-wrap justify-between">
           {cards.map((elem, index) => (

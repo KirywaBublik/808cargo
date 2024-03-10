@@ -1,13 +1,13 @@
 export const InfoTextMainPage = () => {
   return (
     <div className="max-w-[1170px] my-0 mx-auto">
-      <div className="flex flex-col gap-5 pt-5">
-        <p className="space-medium-18">
-          Мы - лучшая логистическая компания
+      <div className="flex flex-col gap-5">
+        <p className="space-medium-18 pt-7">
+          808CARGO
         </p>
         <p className="space-bold-font text-5xl -ml-1">
-          Оптимизируйте свою доставку с помощью
-          наших грузовых услуг
+          Перевозим грузы из Шеньчженя в любую
+          точку РФ быстро и без задержек
         </p>
         <p className="roboto-font max-w-xl">
           Упростите процесс доставки и сделайте
@@ -16,11 +16,11 @@ export const InfoTextMainPage = () => {
           позаботимся обо всем, чтобы обеспечить
           безопасную доставку вашего груза.
         </p>
-        <div className="space-bold-font flex gap-20">
+        <div className="space-bold-font flex gap-20 pt-10">
           <p className="flex flex-col items-center border-dashed border-r-2 border-white pr-10 text-4xl">
             26К
             <span className="roboto-font">
-              Двольных клиентов
+              Довольных клиентов
             </span>
           </p>
           <p className="flex flex-col items-center -ml-10 text-4xl">

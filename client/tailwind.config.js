@@ -7,6 +7,7 @@ export default {
         btn: "rgba(236, 70, 33)",
         btnHover: "rgba(190, 70, 33)",
         borderInput: "rgb(92, 108, 123)",
+        grayBorder: "rgb(237, 240, 243)",
         bgInput: "rgb(9, 14, 35)",
         bgInputHover: "rgb(9, 14, 25)",
         bg: "rgb(18, 29, 80)",

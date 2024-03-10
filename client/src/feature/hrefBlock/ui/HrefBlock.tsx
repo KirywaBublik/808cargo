@@ -7,8 +7,11 @@ export const HrefBlock = ({
 }) => {
   const { t } = useTranslation();
   return (
-    <div className="font-extralight text-xs">
-      <Link to="/">{t(pathes[0])} / </Link>
+    <div className="font-extralight text-xs pt-7">
+      <Link to="/">
+        {t(pathes[0])}
+        {pathes.length >= 2 && " " + "/" + " "}
+      </Link>
       {t(pathes[1]).toLowerCase()}
     </div>
   );

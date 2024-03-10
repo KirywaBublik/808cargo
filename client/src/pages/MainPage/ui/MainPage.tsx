@@ -3,7 +3,7 @@ import {
   AboutUsSlim,
   Button,
   InfoTextMainPage,
-  Reviews,
+  Recommendations,
 } from "@shared/ui";
 import { addOverflowHiddenToBody } from "@/shared/lib/bodyOverflowHidden";
 import { Modal } from "@/widgets/Modal/ui/Modal";
@@ -40,7 +40,7 @@ const MainPage = () => {
       <Seporator />
       <HowItWork />
       <VideoPlayer />
-      <Reviews />
+      <Recommendations />
     </div>
   );
 };
