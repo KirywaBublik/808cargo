@@ -5,10 +5,12 @@ import { Link } from "react-router-dom";
 import { we } from "@shared/assets";
 
 const ContactPage = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("contacts");
   return (
     <div className="max-w-[1170px] mx-auto w-full px-3 md:px-0">
-      <HrefBlock pathes={["Main", "Contacts"]} />
+      <HrefBlock
+        pathes={["Главная", "Контакты"]}
+      />
       <p className="my-10 text-center space-bold-font text-xl">
         {t(
           "Свяжитесь с нами любыми удобными для Вас средствами",
@@ -21,8 +23,9 @@ const ContactPage = () => {
               {t("Главный офис:")}
             </p>
             <p>
-              ул. Ляохуа Цянбей, Футянь,
-              Шеньчжень, Гуанчжоу, Китай, E03 – 04
+              {t(
+                "ул.Ляохуа Цянбей, Футянь, Шеньчжень, Гуанчжоу, Китай, E03 – 04",
+              )}
             </p>
             <p>
               <a href="tel:+74951234567">
@@ -33,7 +36,7 @@ const ContactPage = () => {
           <br />
           <div>
             <p className="text-center space-bold-font text-lg pb-10">
-              Контакты
+              {t("Контакты")}
             </p>
             <div className="flex justify-between items-center roboto-font">
               <div>
@@ -42,7 +45,7 @@ const ContactPage = () => {
                   target="_blank"
                   to="https://t.me/ru_808cargo"
                 >
-                  Телеграм
+                  {t("Телеграм")}
                 </Link>
                 <br />
                 <br />
@@ -50,7 +53,7 @@ const ContactPage = () => {
                   target="_blank"
                   to="https://wa.me/qr/VM7EE64BXXIDH1"
                 >
-                  Ватсапп
+                  {t("Ватсапп")}
                 </Link>
                 <br />
                 <br />
@@ -58,7 +61,7 @@ const ContactPage = () => {
                   target="_blank"
                   to="https://www.avito.ru/user/22bc2d6e7e241d589e89235a68c05dbe/profile?src=sharing"
                 >
-                  Авито
+                  {t("Авито")}
                 </Link>
                 <br />
                 <br />
@@ -66,7 +69,7 @@ const ContactPage = () => {
                   target="_blank"
                   to="https://www.instagram.com/808cargo"
                 >
-                  Инстаграм
+                  {t("Инстаграм")}
                 </Link>
               </div>
               <div>

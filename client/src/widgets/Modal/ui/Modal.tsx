@@ -21,13 +21,14 @@ import {
   type ChangeEvent,
 } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 export const Modal = ({
   active,
   setActive,
   ...props
 }: ModalProps) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("contacts");
   const mutate = useSubscribeMailing();
   const [phoneNumber, setPhoneNumber] =
     useState<string>();
@@ -137,12 +138,17 @@ export const Modal = ({
           </form>
           <div className="flex justify-around my-6">
             {icons.map((icon, index) => (
-              <img
+              <Link
+                target="_blank"
                 key={index}
-                src={icon.src}
-                alt={icon.alt}
-                width={icon.width}
-              />
+                to={icon.path}
+              >
+                <img
+                  src={icon.src}
+                  alt={icon.alt}
+                  width={icon.width}
+                />
+              </Link>
             ))}
           </div>
         </>

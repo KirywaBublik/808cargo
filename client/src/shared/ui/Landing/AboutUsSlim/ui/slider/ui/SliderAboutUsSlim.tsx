@@ -9,8 +9,10 @@ import "swiper/css/navigation";
 import "./style.css";
 import { Slides } from "@shared/ui/Landing/AboutUsSlim/ui/slider/ui/Slides.tsx";
 import { swiperConst } from "@shared/ui/Landing/AboutUsSlim/ui/slider/model/constants.ts";
+import { useTranslation } from "react-i18next";
 
 export const SliderAboutUsSlim = () => {
+  const { t } = useTranslation("aboutUsSlim");
   return (
     <div className="abc">
       <Swiper
@@ -26,7 +28,7 @@ export const SliderAboutUsSlim = () => {
         {swiperConst.map(({ id, text }) => (
           <SwiperSlide key={id}>
             <Slides
-              text={text}
+              text={t(`${text}`)}
               counter={`0${id}`}
             />
           </SwiperSlide>

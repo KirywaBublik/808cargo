@@ -8,7 +8,6 @@ import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
-import "@/shared/config/i18n/i18n";
 const App = () => {
   const queryClient = new QueryClient({
     defaultOptions: {

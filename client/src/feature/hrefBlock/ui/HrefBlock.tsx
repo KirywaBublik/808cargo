@@ -5,7 +5,7 @@ export const HrefBlock = ({
 }: {
   pathes: string[];
 }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("href");
   return (
     <div className="font-extralight text-xs pt-7">
       <Link to="/">
