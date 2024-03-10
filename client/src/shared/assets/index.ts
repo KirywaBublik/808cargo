@@ -8,11 +8,13 @@ import logo from "./icons/logo.svg";
 import video from "./icons/video.mp4";
 import star from "./icons/star.svg";
 import serviceImage1 from "./icons/serviceImage1.svg";
-import step1 from "./icons/step1.svg";
-import step2 from "./icons/step2.svg";
-import step3 from "./icons/step3.svg";
 import burger from "./icons/burger.svg";
 import cross from "./icons/cross.svg";
+import plane from "./icons/plane.svg";
+import container from "./icons/container.jpg";
+import we from "./icons/we.png";
+import img from "./icons/img.jpg";
+import logic from "./icons/logic.jpg";
 export {
   notFound,
   buttonUp,
@@ -24,9 +26,11 @@ export {
   video,
   star,
   serviceImage1,
-  step1,
-  step2,
-  step3,
   burger,
   cross,
+  plane,
+  container,
+  we,
+  img,
+  logic,
 };

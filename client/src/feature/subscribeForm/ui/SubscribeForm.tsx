@@ -88,7 +88,7 @@ export const SubscribeForm = () => {
       />
       <Button
         type="submit"
-        className="mt-2 w-full"
+        className="mt-10 w-full"
         disabled={mutate.isPending}
       >
         {mutate.isPending

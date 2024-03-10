@@ -10,13 +10,13 @@ export const CardItem = ({
 }: Card & ComponentProps<"div">) => {
   return (
     <div
-      className="py-12 px-10 rounded-xl bg-white flex flex-col justify-between items-start w-[367px] h-[340px] mb-5"
+      className="p-10 rounded-xl bg-white flex flex-col justify-between items-start w-[367px] h-[430px] mx-2"
       {...props}
     >
       <img width={70} src={img} alt="" />
-      <h2 className="font-bold text-2xl">
+      <p className="font-bold text-2xl">
         {title}
-      </h2>
+      </p>
       <p className="font-normal text-base text-borderInput ">
         {typography}
       </p>

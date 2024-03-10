@@ -35,7 +35,7 @@ export const Header = () => {
 
   return (
     <header>
-      <nav className="relative max-w-[1170px] w-full my-0 mx-auto flex justify-between items-center py-7 px-3 md:px-0">
+      <nav className="relative max-w-[1170px] w-full my-0 mx-auto flex justify-between items-center pt-7 px-3 md:px-0 border-b border-dashed border-white">
         <Link
           className="space-bold-font text-3xl"
           to="/"

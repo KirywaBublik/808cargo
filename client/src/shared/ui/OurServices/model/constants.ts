@@ -2,44 +2,25 @@ import { type Card } from "./types";
 import serviceImage1 from "@/shared/assets/icons/serviceImage1.svg";
 export const cards: Card[] = [
   {
-    title: "НАШИ СЕРВИСЫ",
+    title:
+      "Перевозка грузов любой сложности из Шеньчженя во все города России",
     typography:
-      "At FastGo, we believe in providing our clients with personalized and efficient logistics solutions that meet their unique needs. ",
+      "Возим грузы любых габаритов и хрупкости из Шеньчженя и провинции Гуанчжоу в любую точку России. Контролируем приёмку товара, обеспечиваем его сохранность и надлежащую упаковку.",
     img: serviceImage1,
     alt: "Доставка",
   },
   {
-    title: "НАШИ СЕРВИСЫ",
+    title:
+      "Сопровождение грузов и решение любых проблем в пути",
     typography:
-      "At FastGo, we believe in providing our clients with personalized and efficient logistics solutions that meet their unique needs. ",
+      "Контейнер пропал в пути? При погрузке упали ящики и хрупкий товар пришёл в негодность? Груз уже месяц «завис» на таможне? С нами такого не бывает — обеспечиваем идеальную скорость доставки и сохранность груза.",
     img: serviceImage1,
     alt: "Доставка",
   },
   {
-    title: "НАШИ СЕРВИСЫ",
+    title: "Таможенное оформление ваших заказов",
     typography:
-      "At FastGo, we believe in providing our clients with personalized and efficient logistics solutions that meet their unique needs. ",
-    img: serviceImage1,
-    alt: "Доставка",
-  },
-  {
-    title: "НАШИ СЕРВИСЫ",
-    typography:
-      "At FastGo, we believe in providing our clients with personalized and efficient logistics solutions that meet their unique needs. ",
-    img: serviceImage1,
-    alt: "Доставка",
-  },
-  {
-    title: "НАШИ СЕРВИСЫ",
-    typography:
-      "At FastGo, we believe in providing our clients with personalized and efficient logistics solutions that meet their unique needs. ",
-    img: serviceImage1,
-    alt: "Доставка",
-  },
-  {
-    title: "НАШИ СЕРВИСЫ",
-    typography:
-      "At FastGo, we believe in providing our clients with personalized and efficient logistics solutions that meet their unique needs. ",
+      "Берём на себя всю бумажную волокиту. Оформляем грузы, уплачиваем необходимые пошлины, следим за наличием нужных маркировок. Согласуем с вами все документы. ",
     img: serviceImage1,
     alt: "Доставка",
   },

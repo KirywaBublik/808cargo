@@ -80,15 +80,17 @@ export const Modal = ({
             // eslint-disable-next-line @typescript-eslint/no-misused-promises
             onSubmit={handleSubmit(onSubmit)}
           >
-            <p>{t("ЗАКАЖИТЕ ЗВОНОК")}</p>
-            <p className="mb-2">
-              {t("ПРЯМО СЕЙЧАС")}
-            </p>
+            <div className="space-bold-font text-base text-center">
+              <p>{t("ЗАКАЖИТЕ ЗВОНОК")}</p>
+              <p className="mb-2">
+                {t("ПРЯМО СЕЙЧАС")}
+              </p>
+            </div>
             {inputs.map((input, index) => (
               <Input
                 key={index}
                 placeholder={t(input.placeholder)}
-                className={`cursor-text ${errors[input.register] != null ? `border-red-600 ` : ``}`}
+                className={`cursor-text w-80  ${errors[input.register] != null ? `border-red-600 ` : ``}`}
                 {...register(input.register)}
               />
             ))}
@@ -96,7 +98,7 @@ export const Modal = ({
               type="tel"
               maxLength={11}
               placeholder={t("Телефон")}
-              className={`w-full cursor-text`}
+              className={`w-80 cursor-text`}
               value={phoneNumber}
               onInput={(
                 e: ChangeEvent<HTMLInputElement>,
@@ -133,7 +135,7 @@ export const Modal = ({
                 : t("Заказать звонок")}
             </Button>
           </form>
-          <div className="flex justify-around mt-6">
+          <div className="flex justify-around my-6">
             {icons.map((icon, index) => (
               <img
                 key={index}

@@ -1,30 +1,22 @@
 import { type Card } from "../ui/Card/Card";
-import {
-  serviceImage1,
-  step1,
-  step2,
-  step3,
-} from "@/shared/assets";
+import { serviceImage1 } from "@/shared/assets";
 export const cards: Card[] = [
   {
-    step: step1,
+    step: "Шаг 1",
     image: serviceImage1,
-    title: "Request a Quote",
-    text: "At FastGo, we believe in providing our clients with personalized and efficient logistics solutions that meet their unique needs. ",
+    text: "Вы связываетесь с нашим менеджером и оформляете заявку, предоставляете необходимые документы",
     alt: "",
   },
   {
-    step: step2,
+    step: "Шаг 2",
     image: serviceImage1,
-    title: "Request a Quote",
-    text: "At FastGo, we believe in providing our clients with personalized and efficient logistics solutions that meet their unique needs. ",
+    text: "Мы получаем и полностью сопровождаем груз из Китая в Россию",
     alt: "",
   },
   {
-    step: step3,
+    step: "Шаг 3",
     image: serviceImage1,
-    title: "Request a Quote",
-    text: "At FastGo, we believe in providing our clients with personalized and efficient logistics solutions that meet their unique needs. ",
+    text: "Ваш представитель получает груз на месте и подтверждает проделанную работу.",
     alt: "",
   },
 ];

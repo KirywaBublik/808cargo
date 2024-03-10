@@ -9,7 +9,7 @@ export const postSubscribeMailing = async (
 ) =>
   (
     await api.post<SubscribeResponse>(
-      "",
+      "/user",
       userData,
     )
   ).data;
