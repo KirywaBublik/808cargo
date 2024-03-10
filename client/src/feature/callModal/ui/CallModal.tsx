@@ -25,7 +25,7 @@ const CallModal = ({
       }}
     >
       <div
-        className={` p-5 max-w-md w-[400px] rounded-xl bg-blue-950 relative ${active ? "scale-100" : "scale-50 transition-all duration-400"}`}
+        className={` p-5 max-w-md w-[600px] rounded-xl bg-blue-950 relative ${active ? "scale-100" : "scale-50 transition-all duration-400"}`}
       >
         <button
           className="absolute top-1 right-2"

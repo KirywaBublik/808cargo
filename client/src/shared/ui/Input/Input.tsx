@@ -1,13 +1,15 @@
-import {
-  forwardRef,
-  type InputHTMLAttributes,
-} from "react";
 import classNames from "classnames";
+import React from "react";
 
-export const Input = forwardRef<
-  HTMLInputElement,
-  InputHTMLAttributes<HTMLInputElement>
->(({ className, ...props }, ref) => {
+interface TextFieldProps {
+  inputProps?: React.HTMLProps<HTMLInputElement>;
+}
+
+export const Input = ({
+  inputProps,
+}: TextFieldProps) => {
+  const { className, ...props } =
+    inputProps || {};
   return (
     <input
       className={classNames(
@@ -15,8 +17,6 @@ export const Input = forwardRef<
         className,
       )}
       {...props}
-      ref={ref}
     />
   );
-});
-Input.displayName = "input";
+};
