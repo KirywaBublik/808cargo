@@ -15,12 +15,16 @@ interface LoginFields {
 export const SubscribeForm = () => {
   const { t } = useTranslation("contacts");
 
-  const { register, handleSubmit, reset } =
-    useForm<LoginFields>();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { isSubmitting },
+  } = useForm<LoginFields>();
   const onSubmit = handleSubmit(async (data) => {
     try {
       await axios.post(
-        "https://affdf12e9349600c.mokky.dev/users",
+        "http://localhost:8000/backend/",
         { ...data },
       );
       reset();
@@ -44,6 +48,7 @@ export const SubscribeForm = () => {
             inputProps={{
               placeholder,
               type: "text",
+              //@ts-ignore
               ...register(name, {
                 required,
               }),
@@ -55,7 +60,9 @@ export const SubscribeForm = () => {
         type="submit"
         className="mt-10 w-full"
       >
-        {t("Заказать звонок")}
+        {isSubmitting
+          ? "Отправка..."
+          : t("Заказать звонок")}
       </Button>
     </form>
   );
