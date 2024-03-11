@@ -39,10 +39,12 @@
 2. cd /server/syncsound <br/>
 3. в settings.py (cd server/syncsound/syncsound) в DATABASES к ключу host установить значение localhost <br/>
 4. выполнить миграции 
+
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
+
 5. python manage.py runserver <br/>
 <br/>
 <br/>
