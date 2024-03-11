@@ -38,7 +38,12 @@
 1. создать и активировать виртуальное окружение с зависимостями из server/requirements.txt <br/>
 2. cd /server/syncsound <br/>
 3. в settings.py (cd server/syncsound/syncsound) в DATABASES к ключу host установить значение localhost <br/>
-3. python manage.py runserver <br/>
+4. выполнить миграции 
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+5. python manage.py runserver <br/>
 <br/>
 <br/>
 Запуск через докер:

@@ -5,8 +5,6 @@ from openpyxl import load_workbook
 from openpyxl import Workbook
 
 from whatsapp_api_client_python import API
-# from twilio.rest import Client
-from django.shortcuts import render
 from main.forms import UserInfoForm
 from main.models import User
 from .serializers import VisitSerializer
@@ -14,10 +12,6 @@ from rest_framework import generics
 from rest_framework.response import Response
 
 from .consts import TELE_NUM, API_TOKEN_INSTANCE, ID_INSTANCE
-
-'''
-Second whatsapp message sender which using twilio API
-'''
 
 
 class VisitCard(generics.CreateAPIView):
