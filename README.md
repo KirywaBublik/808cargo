@@ -45,5 +45,6 @@
 <br/>
 <br/>
 1. cd server/ <br/>
-2. docker-compose build <br/>
-3. docker-compose up <br/>
+2. в settings.py (cd server/syncsound/syncsound) в DATABASES к ключу host установить значение db <br/>
+3. docker-compose build <br/>
+4. docker-compose up <br/>
