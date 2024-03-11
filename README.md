@@ -22,3 +22,28 @@
 2. docker build -t {name} .  , где {name} - любое имя образа <br/>
 3. docker run —rm —name {name2} -p 3000:5173 -d {name} , где {name} - имя образа, а {name2} - имя контейнера <br/>
 4. docker ps -a
+<br/>
+<br/>
+<br/>
+<br/>
+<h1>Backend</h1>
+<br/>
+<br/>
+Проект реализован с помощью фрейморка Django REST framework
+<br/>
+<br/>
+Для запуска проекта локально:
+<br/>
+<br/>
+1. создать и активировать виртуальное окружение с зависимостями из server/requirements.txt <br/>
+2. cd /server/syncsound <br/>
+3. в settings.py (cd server/syncsound/syncsound) в DATABASES к ключу host установить значение localhost <br/>
+3. python manage.py runserver <br/>
+<br/>
+<br/>
+Запуск через докер:
+<br/>
+<br/>
+1. cd server/ <br/>
+2. docker-compose build <br/>
+3. docker-compose up <br/>
