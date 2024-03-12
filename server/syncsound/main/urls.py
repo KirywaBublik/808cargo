@@ -1,6 +1,6 @@
 from django.urls import path
 
-from . views import VisitCard
+from .views import VisitCard
 
 app_name = 'main'
 

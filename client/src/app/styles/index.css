@@ -43,7 +43,7 @@ body {
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  background: rgb(18, 29, 80);
+  background: rgb(29, 73, 138);
   color: white;
 }
 
@@ -55,6 +55,12 @@ textarea {
 
 input::-ms-clear {
   display: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
 button {
@@ -99,19 +105,19 @@ h6 {
     line-height: 1;
     text-decoration: none;
   }
-  .underline-effect:after{
+  .underline-effect:after {
     display: block;
     position: absolute;
     left: 0;
     width: 0;
     height: 1px;
-    background-color: white;
+    background-color: rgb(29, 73, 138);
     content: "";
     margin-top: 10px;
     transition: width 0.3s ease-out;
   }
   .underline-effect:hover:after,
-  .underline-effect:focus:after{
+  .underline-effect:focus:after {
     width: 100%;
   }
   .space-medium {
