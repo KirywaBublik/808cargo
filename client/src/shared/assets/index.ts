@@ -17,7 +17,6 @@ import tg from "./icons/tg.png";
 import wa from "./icons/wa.png";
 import inst from "./icons/inst.png";
 import avito from "./icons/avito.png";
-import cont from "./icons/cont.jpg";
 export {
   notFound,
   buttonUp,
@@ -38,5 +37,4 @@ export {
   wa,
   inst,
   avito,
-  cont,
 };
