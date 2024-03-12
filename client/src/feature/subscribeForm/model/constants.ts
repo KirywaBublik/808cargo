@@ -23,10 +23,4 @@ export const inputs = [
     placeholder: "Описание товара",
     required: true,
   },
-  {
-    id: 4,
-    name: "phone",
-    placeholder: "Телефон",
-    required: true,
-  },
 ];

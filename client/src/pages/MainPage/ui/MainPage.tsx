@@ -14,9 +14,11 @@ import { Seporator } from "@/shared/ui/Seporator";
 import { HowItWork } from "@/shared/ui/HowItWork";
 const MainPage = () => {
   const [active, setActive] = useState(false);
+
   const { t } = useTranslation(
     "infoTextMainPage",
   );
+
   const handleOpen = () => {
     setActive(true);
     addOverflowHiddenToBody();

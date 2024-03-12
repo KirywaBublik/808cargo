@@ -14,17 +14,21 @@ import { useTranslation } from "react-i18next";
 
 export const Footer = () => {
   const { t } = useTranslation("header");
+
   const [active, setActive] = useState(false);
+
   const navigate = useNavigate();
+
   const location = useLocation();
+
   const handleOpen = () => {
     setActive(true);
     addOverflowHiddenToBody();
   };
 
   return (
-    <footer className="py-5 bg-bgInput">
-      <div className="max-w-[1170px] my-0 mx-auto flex flex-col px-3 gap-9 md:px-0 md:gap-0 md:flex-row md:justify-between md:items-center pb-10 border-dashed border-b-2 border-white">
+    <footer className="py-5 bg-white text-testBg">
+      <div className="max-w-[1170px] my-0 mx-auto flex flex-col px-3 gap-9 md:px-0 md:gap-0 md:flex-row md:justify-between md:items-center pb-10 border-dashed border-b-2 border-testBg">
         <div className="space-bold-font text-lg">
           {t("Навигация")}
           <br />
@@ -60,16 +64,11 @@ export const Footer = () => {
             src={logo}
             alt=""
           />
-          <p className="pt-5 space-medium-14 max-w-96 text-center ml-10">
-            {t(
-              "В 808CARGO мы верим в предоставление нашим клиентам персонализированных и эффективных логистических решений, отвечающих их уникальным потребностям.",
-            )}
-          </p>
         </div>
         <div>
           <Button
             onClick={handleOpen}
-            className="space-medium-14"
+            className="space-medium-14 text-white"
           >
             {t("Заказать звонок")}
           </Button>

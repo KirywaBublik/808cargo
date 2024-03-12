@@ -14,6 +14,7 @@ export default {
         about: "rgb(14, 51, 203)",
         blueVideo: "rgb(31, 69, 228)",
         bgReviews: "rgb(237, 240, 243)",
+        testBg: "rgb(29, 73, 138)",
       },
     },
   },
