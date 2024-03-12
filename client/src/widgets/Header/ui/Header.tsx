@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { navLinks } from "@widgets/Header";
 import { useTranslation } from "react-i18next";
-import { BtnChangeLng } from "@/feature/btnChangeLng";
 import {
   logo,
   burger,
@@ -11,17 +10,20 @@ import { btnChange } from "@widgets/Header/model/constants.ts";
 import classNames from "classnames";
 import { useLocalStorageState } from "@widgets/Header/lib/useCurrentBtnSession.ts";
 import { useState } from "react";
+
 export const Header = () => {
   const { t, i18n } = useTranslation("header");
+
   const toggle = (changeLanguage: string) => {
     void i18n.changeLanguage(changeLanguage);
   };
-  const [isOpen, setIsOpen] =
-    useState<boolean>(false);
+
+  const [isOpen, setIsOpen] = useState(false);
+
   const currentBtn = (id: number) => {
     const style =
       id !== 2
-        ? "border-r-2 border-dashed border-white pr-2"
+        ? "border-r-2 border-dashed border-testBg pr-2"
         : "border-none";
     const style2 = id === 1 && "-ml-2";
     const style3 = id === 2 && "-ml-2";
@@ -37,8 +39,8 @@ export const Header = () => {
   };
 
   return (
-    <header>
-      <nav className="relative max-w-[1170px] w-full my-0 mx-auto flex justify-between items-center pt-7 px-3 md:px-0 border-b border-dashed border-white">
+    <header className="bg-white">
+      <nav className="relative max-w-[1170px] w-full my-0 mx-auto flex justify-between items-center pt-7 px-3 md:px-0">
         <Link
           className="space-bold-font text-3xl"
           to="/"
@@ -62,7 +64,7 @@ export const Header = () => {
           />
         </div>
         <div
-          className={`rounded-b-lg border-solid  border-b-2 py-12 border-sky-100 transition-all ease-in-out fixed lg:static lg:border-none left-0 p-4 flex flex-col items-center space-medium-18 bg-bgInput lg:bg-[#121d50] ${isOpen ? "top-0" : "top-[-420px]"} h-auto w-full gap-6 lg:flex-row lg:h-auto lg:w-auto`}
+          className={`rounded-b-lg text-testBg border-solid  border-b-2 py-12 border-sky-100 transition-all ease-in-out fixed lg:static lg:border-none left-0 p-4 flex flex-col items-center space-medium-18 bg-bgInput lg:bg-white ${isOpen ? "top-0" : "top-[-420px]"} h-auto w-full gap-6 lg:flex-row lg:h-auto lg:w-auto`}
         >
           {navLinks.map(({ id, name, path }) => (
             <Link
@@ -81,7 +83,7 @@ export const Header = () => {
                   handleBtnClick(id);
                 }}
               >
-                <BtnChangeLng
+                <button
                   className={classNames(
                     currentBtn(id),
                     selectedBtn === id &&
@@ -94,7 +96,7 @@ export const Header = () => {
                   {t(
                     `${lang.charAt(0).toUpperCase() + lang.slice(1)}`,
                   )}
-                </BtnChangeLng>
+                </button>
               </div>
             ))}
           </div>

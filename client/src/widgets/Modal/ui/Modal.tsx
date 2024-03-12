@@ -12,10 +12,12 @@ export const Modal = ({
   ...props
 }: ModalProps) => {
   const { t } = useTranslation("contacts");
+
   const handleClose = () => {
     setActive(false);
     removeOverflowHiddenFromBody();
   };
+
   return (
     <CallModal
       active={active}

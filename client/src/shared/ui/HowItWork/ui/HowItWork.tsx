@@ -21,7 +21,7 @@ export const HowItWork = () => {
             </p>
           </div>
         </div>
-        <div className=" flex justify-between mt-[71px]">
+        <div className="flex justify-between mt-[71px]">
           {cards.map(
             (
               { text, step, image, title, alt },

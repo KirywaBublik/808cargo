@@ -1,15 +1,12 @@
-import {
-  Swiper,
-  SwiperSlide,
-} from "swiper/react";
 import { Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
 import "./style.css";
 import { Slides } from "@shared/ui/Landing/AboutUsSlim/ui/slider/ui/Slides.tsx";
 import { swiperConst } from "@shared/ui/Landing/AboutUsSlim/ui/slider/model/constants.ts";
 import { useTranslation } from "react-i18next";
+import {
+  Swiper,
+  SwiperSlide,
+} from "swiper/react";
 
 export const SliderAboutUsSlim = () => {
   const { t } = useTranslation("aboutUsSlim");
@@ -23,7 +20,6 @@ export const SliderAboutUsSlim = () => {
           disableOnInteraction: false,
         }}
         modules={[Autoplay]}
-        className="mySwiper"
       >
         {swiperConst.map(({ id, text }) => (
           <SwiperSlide key={id}>

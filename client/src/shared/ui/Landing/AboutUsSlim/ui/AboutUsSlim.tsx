@@ -35,9 +35,7 @@ export const AboutUsSlim = () => {
               {t("Узнать больше")}
             </Button>
           </div>
-          <div>
-            <SliderAboutUsSlim />
-          </div>
+          <SliderAboutUsSlim />
         </div>
       </div>
     </div>
