@@ -5,7 +5,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-cdaxm9br0ln2fj04#ie9kcl8v8ahf1595b*#4y0oq7jo2$3o1e'
 
-
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
@@ -43,6 +42,8 @@ REST_FRAMEWORK = {
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+SECURE_SSL_REDIRECT = True
 
 ROOT_URLCONF = 'syncsound.urls'
 

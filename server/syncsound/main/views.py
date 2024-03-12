@@ -14,7 +14,6 @@ from rest_framework.response import Response
 from .consts import TELE_NUM, API_TOKEN_INSTANCE, ID_INSTANCE
 
 
-
 class VisitCard(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = VisitSerializer
