@@ -37,7 +37,7 @@
 <br/>
 1. создать и активировать виртуальное окружение с зависимостями из server/requirements.txt <br/>
 2. cd /server/syncsound <br/>
-3. в settings.py (cd server/syncsound/syncsound) в DATABASES к ключу host установить значение localhost <br/>
+3. в settings.py (cd server/syncsound/syncsound) в DATABASES ключу host присвоить значение localhost <br/>
 4. выполнить миграции 
 
 ```bash
@@ -55,3 +55,9 @@ python manage.py migrate
 2. в settings.py (cd server/syncsound/syncsound) в DATABASES к ключу host установить значение db <br/>
 3. docker-compose build <br/>
 4. docker-compose up <br/>
+5. при собранном и поднятом докере сделать миграции в контейнерах бэкенда <br/>
+
+ ```bash
+     docker exec -it backend python manage.py makemigrations
+     docker exec -it backend python manage.py migrate
+ ```
