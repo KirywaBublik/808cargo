@@ -53,9 +53,11 @@ python manage.py migrate
 <br/>
 1. cd server/ <br/>
 2. в settings.py (cd server/syncsound/syncsound) в DATABASES к ключу host установить значение db <br/>
-3. docker-compose build <br/>
-4. docker-compose up <br/>
-5. при собранном и поднятом докере сделать миграции в контейнерах бэкенда <br/>
+ ```bash
+     docker-compose build
+     docker-compose up
+ ```
+3. при собранном и поднятом докере сделать миграции в контейнерах бэкенда <br/>
 
  ```bash
      docker exec -it backend python manage.py makemigrations
