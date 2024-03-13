@@ -53,6 +53,7 @@ python manage.py migrate
 <br/>
 1. cd server/ <br/>
 2. в settings.py (cd server/syncsound/syncsound) в DATABASES к ключу host установить значение db <br/>
+
  ```bash
      docker-compose build
      docker-compose up
