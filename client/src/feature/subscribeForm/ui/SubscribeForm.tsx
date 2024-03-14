@@ -3,6 +3,7 @@ import { Button, Input } from "@shared/ui";
 import { useTranslation } from "react-i18next";
 import { inputs } from "@/feature/subscribeForm/model/constants.ts";
 import { onFormSubmit } from "@/shared/api/api";
+import "@shared/assets/styles/adaptive.css";
 export interface LoginFields {
   name: string;
   surname?: string;
@@ -28,7 +29,7 @@ export const SubscribeForm = () => {
   return (
     <form
       onSubmit={onSubmit}
-      className="flex flex-col items-center gap-2"
+      className="flex flex-col items-center justify-center gap-2"
     >
       {inputs.map(
         ({ name, placeholder, required, id }) => (
@@ -37,7 +38,7 @@ export const SubscribeForm = () => {
               inputProps={{
                 placeholder: t(`${placeholder}`),
                 type: "text",
-                //@ts-ignore
+                // @ts-expect-error
                 ...register(name, {
                   required: {
                     value: required,

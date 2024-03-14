@@ -2,14 +2,17 @@ import { cards } from "../model/constants";
 import { CardItem } from "./Card/Card";
 import { Slider } from "./Slider/Slider";
 import { useTranslation } from "react-i18next";
+import "@shared/assets/styles/adaptive.css";
 
 export const HowItWork = () => {
   const { t } = useTranslation("howItWork");
   return (
     <div className="bg-white text-bg">
       <div className="max-w-[1170px] mx-auto py-[110px]">
-        <div className="flex justify-between gap-8 items-center pb-[79px] border-b-2 border-dashed">
-          <Slider />
+        <div className="how flex justify-between gap-8 items-center pb-[79px] border-b-2 border-dashed">
+          {window.innerWidth !== 425 && (
+            <Slider />
+          )}
           <div>
             <h2 className="text-blue-700 uppercase text-sm font-medium mb-4">
               {t("Как мы работаем")}
@@ -21,7 +24,7 @@ export const HowItWork = () => {
             </p>
           </div>
         </div>
-        <div className="flex justify-between mt-[71px]">
+        <div className="flex justify-between mt-[71px] step">
           {cards.map(
             (
               { text, step, image, title, alt },

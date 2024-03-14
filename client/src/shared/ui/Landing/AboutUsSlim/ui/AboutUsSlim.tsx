@@ -4,6 +4,7 @@ import {
 } from "@shared/ui";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import "@shared/assets/styles/adaptive.css";
 
 export const AboutUsSlim = () => {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ export const AboutUsSlim = () => {
   return (
     <div className="bg-white p-28">
       <div className="max-w-[1170px] my-0 mx-auto">
-        <div className="flex justify-between items-center">
+        <div className="aboutUsSlim flex justify-between items-center">
           <div>
             <p className="text-about space-medium-14">
               {t("О нас")}
@@ -27,7 +28,7 @@ export const AboutUsSlim = () => {
               )}
             </div>
             <Button
-              className="mt-5"
+              className="mt-5 aboutUsSlimBtn"
               onClick={() => {
                 navigate("/about");
               }}

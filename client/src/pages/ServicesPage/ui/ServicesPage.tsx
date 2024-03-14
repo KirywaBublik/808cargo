@@ -1,20 +1,21 @@
 import { HrefBlock } from "@/feature/hrefBlock";
 import { img, logic } from "@shared/assets";
 import { useTranslation } from "react-i18next";
+import "@shared/assets/styles/adaptive.css";
 
 const ServicesPage = () => {
   const { t } = useTranslation("services");
   return (
     <div className="max-w-[1170px] my-0 mx-auto">
       <HrefBlock pathes={["Главная", "Услуги"]} />
-      <p className="space-bold-font text-2xl text-center pt-10">
+      <p className="space-bold-font text-2xl text-center pt-10 serviceTitle">
         {t(
           "На данный момент мы предлагаем 3 основных вида услуг",
         )}
       </p>
-      <div className="mt-10 mb-20 flex flex-col gap-6 space-medium-18">
-        <div className="flex justify-between items-center">
-          <div className="max-w-[400px] leading-snug">
+      <div className="mt-10 mb-20 flex flex-col gap-6 space-medium-18 servicePage">
+        <div className="flex justify-between items-center servicePageMin">
+          <div className="max-w-[400px] leading-snug serviceText">
             <p className="text-left space-bold-font pb-4">
               {t("Доставка грузов")}
             </p>
@@ -23,18 +24,18 @@ const ServicesPage = () => {
             )}
           </div>
           <img
-            className="w-[45%] h-[45%]"
+            className="w-[45%] h-[45%] images"
             src={img}
             alt=""
           />
         </div>
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center logic">
           <img
-            className="w-[50%] h-[50%]"
+            className="w-[50%] h-[50%] images"
             src={logic}
             alt=""
           />
-          <div className="max-w-[400px] text-right leading-snug">
+          <div className="max-w-[400px] text-right leading-snug serviceText">
             <p className="space-bold-font pb-4 ">
               {t("Логистическая консультация")}
             </p>
@@ -43,7 +44,7 @@ const ServicesPage = () => {
             )}
           </div>
         </div>
-        <div className="text-center mt-10 leading-snug">
+        <div className="text-center mt-10 leading-snug serviceText">
           <p className="text-center space-bold-font pb-4">
             {t("Таможенное сопровождение")}
           </p>

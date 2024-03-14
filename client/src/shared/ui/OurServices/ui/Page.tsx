@@ -1,6 +1,8 @@
 import { cards } from "../model/constants";
 import { CardItem } from "./Card/Card";
 import { useTranslation } from "react-i18next";
+import "@shared/assets/styles/adaptive.css";
+
 export const OurServices = () => {
   const { t } = useTranslation("services");
   return (
@@ -11,7 +13,7 @@ export const OurServices = () => {
             {t("НАШИ УСЛУГИ")}
           </h2>
         </div>
-        <div className="flex flex-wrap justify-between">
+        <div className="flex flex-wrap justify-between services">
           {cards.map(
             (
               { title, typography, alt, img },

@@ -1,12 +1,13 @@
 import { HrefBlock } from "@/feature/hrefBlock";
 import { useTranslation } from "react-i18next";
+import "@shared/assets/styles/adaptive.css";
 
 const AboutPage = () => {
   const { t } = useTranslation("about");
   return (
     <div className="max-w-[1170px] my-0 mx-auto">
       <HrefBlock pathes={["Главная", "О нас"]} />
-      <div className="space-medium-18 mt-10 flex flex-col gap-6 leading-snug">
+      <div className="space-medium-18 mt-10 flex flex-col gap-6 leading-snug aboutPage">
         <p>
           <span className="space-bold-font text-xl">
             808cargo

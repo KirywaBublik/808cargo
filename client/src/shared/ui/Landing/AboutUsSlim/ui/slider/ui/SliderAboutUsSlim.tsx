@@ -11,25 +11,29 @@ import {
 export const SliderAboutUsSlim = () => {
   const { t } = useTranslation("aboutUsSlim");
   return (
-    <div className="abc">
-      <Swiper
-        spaceBetween={30}
-        centeredSlides={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        modules={[Autoplay]}
-      >
-        {swiperConst.map(({ id, text }) => (
-          <SwiperSlide key={id}>
-            <Slides
-              text={t(`${text}`)}
-              counter={`0${id}`}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+    <div>
+      {window.innerWidth !== 425 && (
+        <div className="abc">
+          <Swiper
+            spaceBetween={30}
+            centeredSlides={true}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            modules={[Autoplay]}
+          >
+            {swiperConst.map(({ id, text }) => (
+              <SwiperSlide key={id}>
+                <Slides
+                  text={t(`${text}`)}
+                  counter={`0${id}`}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      )}
     </div>
   );
 };

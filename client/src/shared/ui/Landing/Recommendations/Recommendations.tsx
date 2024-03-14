@@ -1,9 +1,10 @@
 import { useTranslation } from "react-i18next";
+import "@shared/assets/styles/adaptive.css";
 
 export const Recommendations = () => {
   const { t } = useTranslation("recommendations");
   return (
-    <div className="bg-white py-10">
+    <div className="bg-white py-10 header">
       <div className="max-w-[1170px] mx-auto py-[15px]">
         <p className="text-about pb-10">
           {t("Почему стоит работать с нами")}
