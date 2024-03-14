@@ -20,7 +20,7 @@
 <br/>
 1. cd client/ <br/>
 2. docker build -t {name} .  , где {name} - любое имя образа <br/>
-3. docker run —rm —name {name2} -p 3000:5173 -d {name} , где {name} - имя образа, а {name2} - имя контейнера <br/>
+3. docker run --rm --name {name2} -p 3000:5173 -d {name} , где {name} - имя образа, а {name2} - имя контейнера <br/>
 4. docker ps -a
 <br/>
 <br/>

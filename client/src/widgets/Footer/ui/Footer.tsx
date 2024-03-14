@@ -11,6 +11,7 @@ import {
 import { logo } from "@shared/assets";
 import { scrollTo } from "@shared/lib";
 import { useTranslation } from "react-i18next";
+import "@shared/assets/styles/adaptive.css";
 
 export const Footer = () => {
   const { t } = useTranslation("header");
@@ -27,8 +28,8 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="py-5 bg-white text-testBg">
-      <div className="max-w-[1170px] my-0 mx-auto flex flex-col px-3 gap-9 md:px-0 md:gap-0 md:flex-row md:justify-between md:items-center pb-10 border-dashed border-b-2 border-testBg">
+    <footer className="py-5 bg-white text-testBg header">
+      <div className="max-w-[1170px] my-0 mx-auto flex flex-col px-3 gap-9 md:px-0 md:gap-0 md:flex-row md:justify-between md:items-center pb-10 border-dashed border-b-2 border-testBg headerMin">
         <div className="space-bold-font text-lg">
           {t("Навигация")}
           <br />
@@ -51,7 +52,7 @@ export const Footer = () => {
             )}
           </div>
         </div>
-        <div className="space-bold-font text-lg ml-20">
+        <div className="space-bold-font text-lg ml-20 headerImg">
           <img
             onClick={
               location.pathname === "/"
