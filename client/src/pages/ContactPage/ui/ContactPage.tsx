@@ -44,10 +44,10 @@ const ContactPage = () => {
                     )}
                     {window.innerWidth ===
                       1024 && (
-                        <div>
-                          <br />
-                        </div>
-                      )}
+                      <div>
+                        <br />
+                      </div>
+                    )}
                   </p>
                   <Map
                     defaultState={{
@@ -116,73 +116,69 @@ const ContactPage = () => {
             </Link>
           </p>
           <div className="flex justify-between items-center roboto-font imgImgImg">
-            <div className="contactImgImg">
-              <div className="text-center mb-10">
-                <Link
-                  className="underline"
-                  to="https://t.me/ru_808cargo"
-                  target="_blank"
-                >
-                  {t("Телеграм")}
-                </Link>
-                <br />
-                <br />
-                <img
-                  className="w-40 h-50 rounded"
-                  src={tg}
-                  alt=""
-                />
-              </div>
-              <div className="text-center">
-                <Link
-                  className="underline"
-                  to="https://wa.me/qr/VM7EE64BXXIDH1"
-                  target="_blank"
-                >
-                  {t("Ватсапп")}
-                </Link>
-                <br />
-                <br />
-                <img
-                  className="w-40 h-50 rounded"
-                  src={wa}
-                  alt=""
-                />
-              </div>
+            <div className="text-center">
+              <Link
+                className="underline"
+                to="https://t.me/ru_808cargo"
+                target="_blank"
+              >
+                {t("Телеграм")}
+              </Link>
+              <br />
+              <br />
+              <img
+                className="w-40 h-50 rounded"
+                src={tg}
+                alt=""
+              />
             </div>
-            <div>
-              <div className="text-center mb-10">
-                <Link
-                  className="underline"
-                  to="https://www.instagram.com/808cargo"
-                  target="_blank"
-                >
-                  {t("Инстаграм")}
-                </Link>
-                <br />
-                <br />
-                <img
-                  className="w-40 h-50 rounded"
-                  src={inst}
-                  alt=""
-                />
-              </div>
-              <div className="text-center">
-                <Link
-                  className="underline"
-                  to="https://www.avito.ru/user/22bc2d6e7e241d589e89235a68c05dbe/profile?src=sharing"
-                  target="_blank"
-                >
-                  {t("Авито")}
-                </Link>
-                <br />
-                <br />
-                <img
-                  className="w-40 h-50 rounded"
-                  src={avito}
-                  alt=""
-                />
-              </div>
+            <div className="text-center">
+              <Link
+                className="underline"
+                to="https://wa.me/qr/VM7EE64BXXIDH1"
+                target="_blank"
+              >
+                {t("Ватсапп")}
+              </Link>
+              <br />
+              <br />
+              <img
+                className="w-40 h-50 rounded"
+                src={wa}
+                alt=""
+              />
+            </div>
+            <div className="text-center">
+              <Link
+                className="underline"
+                to="https://www.instagram.com/808cargo"
+                target="_blank"
+              >
+                {t("Инстаграм")}
+              </Link>
+              <br />
+              <br />
+              <img
+                className="w-40 h-50 rounded"
+                src={inst}
+                alt=""
+              />
+            </div>
+            <div className="text-center">
+              <Link
+                className="underline"
+                to="https://www.avito.ru/user/22bc2d6e7e241d589e89235a68c05dbe/profile?src=sharing"
+                target="_blank"
+              >
+                {t("Авито")}
+              </Link>
+              <br />
+              <br />
+              <img
+                className="w-40 h-50 rounded"
+                src={avito}
+                alt=""
+              />
             </div>
           </div>
           <div className="flex flex-col items-center justify-center py-10">

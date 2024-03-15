@@ -9,7 +9,7 @@ export const Seporator = () => {
     array.splice(array.length - 3, 2);
 
   return (
-    <div className="bg-seporator w-full">
+    <div className="bg-bgReviews w-full">
       <div className="max-w-[1170px] mx-auto py-[101px] flex justify-between sep">
         {array.map((_, index) => (
           <img
