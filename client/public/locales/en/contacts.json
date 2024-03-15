@@ -18,5 +18,8 @@
   "Город": "City",
   "Описание товара": "Product Description",
   "Ваш телефон": "Your phone number",
-  "Заявка принята!": "Application accepted!"
+  "Заявка принята!": "Application accepted!",
+  "обязательное поле": "required field",
+  "максимальная длина - 18": "max length - 18",
+  "минимальная длина - 10": "min length - 10"
 }

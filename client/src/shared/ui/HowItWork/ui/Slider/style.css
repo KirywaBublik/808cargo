@@ -11,6 +11,7 @@
   border-radius: 20px;
   width: 556px;
   height: 372px;
+  border-radius: 20px;
 }
 
 .swiper-slide {
@@ -20,4 +21,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 20px;
+
 }

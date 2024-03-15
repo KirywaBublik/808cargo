@@ -42,12 +42,15 @@ export const SubscribeForm = () => {
                 ...register(name, {
                   required: {
                     value: required,
-                    message: "обязательное поле",
+                    message: t(
+                      "обязательное поле",
+                    ),
                   },
                   maxLength: {
                     value: 25,
-                    message:
+                    message: t(
                       "максимальная длина - 18",
+                    ),
                   },
                 }),
               }}
@@ -69,15 +72,19 @@ export const SubscribeForm = () => {
           ...register("phone", {
             required: {
               value: true,
-              message: "обязательное поле",
+              message: t("обязательное поле"),
             },
             minLength: {
               value: 10,
-              message: "минимальная длина - 10",
+              message: t(
+                "минимальная длина - 10",
+              ),
             },
             maxLength: {
               value: 18,
-              message: "максимальная длина - 18",
+              message: t(
+                "максимальная длина - 18",
+              ),
             },
           }),
         }}
