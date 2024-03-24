@@ -10,20 +10,48 @@
 Запуск проекта локально:
 <br/>
 <br/>
-1. cd client/ <br/>
-2. yarn/npm install <br/>
-3. yarn dev/ npm run dev <br/>
+
+```bash
+1. cd client/
+```
+
+```bash
+2. yarn (npm install)
+```
+
+```bash
+3. yarn dev (npm run dev)
+```
+
 <br/>
 <br/>
 Запуска проекта через докер:
 <br/>
 <br/>
-1. cd client/ <br/>
-2. docker build -t {name} .  , где {name} - любое имя образа <br/>
-3. docker run --rm --name {name2} -p 3000:5173 -d {name} , где {name} - имя образа, а {name2} - имя контейнера <br/>
-4. docker ps -a
+
+```bash
+1. cd client/
+```
+
+```bash
+2. docker build -t {name} .  , где {name} - любое имя образа
+```
+
+```bash
+3. docker run --rm --name {name2} -p 3000:5173 -d {name} , где {name} - имя образа, а {name2} - имя контейнера
+```
+
 <br/>
 <br/>
+<h2>Изменение пути к сереру</h2>
+По умолчанию ссылка на сервер === http://localhost:8000/backend/, но при желании ее можно изменить с помощью .env файла.
+<br/>
+Чтобы это сделать нужно при запуски поект в dev(production) режиме прописать 
+
+```bash
+VITE_API_URL={link} yarn dev(build)
+```
+
 <br/>
 <br/>
 <h1>Backend</h1>
