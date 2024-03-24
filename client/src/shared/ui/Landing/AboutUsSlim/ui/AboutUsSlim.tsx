@@ -14,7 +14,7 @@ export const AboutUsSlim = () => {
       <div className="max-w-[1170px] my-0 mx-auto">
         <div className="aboutUsSlim flex justify-between items-center">
           <div>
-            <p className="text-about space-medium-14">
+            <p className="text-about space-medium-14 abobut">
               {t("О нас")}
             </p>
             <div className="pt-5 max-w-lg text-bg roboto-font">

@@ -7,7 +7,7 @@ export const InfoTextMainPage = () => {
   );
   return (
     <div className="max-w-[1170px] my-0 mx-auto pad">
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-5 padpad">
         <p className="space-medium-18 pt-7">
           <p className="headerTitleMin">
             808CARGO
