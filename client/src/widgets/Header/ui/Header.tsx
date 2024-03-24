@@ -9,7 +9,7 @@ import {
 import { btnChange } from "@widgets/Header/model/constants.ts";
 import classNames from "classnames";
 import { useLocalStorageState } from "@widgets/Header/lib/useCurrentBtnSession.ts";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "@shared/assets/styles/adaptive.css";
 
 export const Header = () => {
@@ -33,11 +33,19 @@ export const Header = () => {
   };
 
   const [selectedBtn, setSelectedBtn] =
-    useLocalStorageState("selectedBtn", 0);
+    useLocalStorageState("selectedBtn");
 
-  const handleBtnClick = (id: number) => {
-    setSelectedBtn(id);
-  };
+  useEffect(() => {
+    localStorage.getItem("i18nextLng") === "en" ||
+    localStorage.getItem("i18nextLng") === "en-US"
+      ? setSelectedBtn(1)
+      : localStorage.getItem("i18nextLng") ===
+            "ru" ||
+          localStorage.getItem("i18nextLng") ===
+            "ru-RU"
+        ? setSelectedBtn(0)
+        : setSelectedBtn(2);
+  });
 
   return (
     <header className="bg-white header">
@@ -47,11 +55,14 @@ export const Header = () => {
           to="/"
         >
           <img
-            className="w-60 h-15 sm:w-80 sm:h-20 "
+            className="w-60 h-15 sm:w-80 sm:h-20 imgHead"
             src={logo}
             alt=""
           />
         </Link>
+        {window.innerWidth <= 320 && (
+          <p className="ml-8"></p>
+        )}
         <div
           className={`lg:hidden fixed z-10 ${isOpen ? "fixed" : "absolute"} top-10 right-5`}
           onClick={() => {
@@ -78,17 +89,12 @@ export const Header = () => {
           ))}
           <div className="flex gap-6">
             {btnChange.map(({ id, lang }) => (
-              <div
-                key={id}
-                onClick={() => {
-                  handleBtnClick(id);
-                }}
-              >
+              <div key={id}>
                 <button
                   className={classNames(
                     currentBtn(id),
                     selectedBtn === id &&
-                    "text-btn ",
+                      "text-btn ",
                   )}
                   onClick={() => {
                     toggle(lang);

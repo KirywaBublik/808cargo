@@ -9,15 +9,13 @@ export const HowItWork = () => {
   return (
     <div className="bg-white text-bg">
       <div className="max-w-[1170px] mx-auto py-[110px]">
-        <div className="how flex justify-between gap-8 items-center pb-[79px] border-b-2 border-dashed">
-          {window.innerWidth !== 425 && (
-            <Slider />
-          )}
+        <div className="how flex justify-between gap-14 items-center pb-[79px] border-b-2 border-dashed">
+          {window.innerWidth > 425 && <Slider />}
           <div>
             <h2 className="text-blue-700 uppercase text-sm font-medium mb-4">
               {t("Как мы работаем")}
             </h2>
-            <p className="text-bg font-normal text-2xl ">
+            <p className="text-bg font-normal text-xl textPad">
               {t(
                 "808cargo работает с клиентами в три простых этапа. В начале, вы связываетесь с нашим представителем по телефону или через форму обратной связи. После обсуждения особенностей груза, вы оформляете заявку через нашего менеджера и оплачиваете услугу. На этом всё — остальную работу мы полностью берём на себя. При необходимости, мы можем запросить у вас дополнительные документы. В любой момент вы можете узнать местоположение груза.",
               )}

@@ -4,15 +4,18 @@ import { Footer } from "@widgets/Footer";
 import { Loading } from "@shared/ui";
 import { Suspense } from "react";
 import { BtnTopPage } from "@/feature/btnTopPage";
+import { YMaps } from "@pbe/react-yandex-maps";
 const App = () => {
   return (
     <Suspense fallback={<Loading />}>
-      <Header />
-      <div className="shrink grow basis-auto">
-        <AppRouter />
-        <BtnTopPage />
-      </div>
-      <Footer />
+      <YMaps>
+        <Header />
+        <div className="shrink grow basis-auto">
+          <AppRouter />
+          <BtnTopPage />
+        </div>
+        <Footer />
+      </YMaps>
     </Suspense>
   );
 };
