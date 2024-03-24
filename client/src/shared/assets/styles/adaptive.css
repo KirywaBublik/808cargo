@@ -2,6 +2,13 @@
   @media (max-width: 1024px) {
     flex-direction: column;
   }
+  @media (max-width: 425px) {
+    text-align: center;
+    padding: 0 15px;
+  }
+  @media (max-width: 320px) {
+    padding: 0 15px;
+  }
 }
 .aboutUsSlimBtn {
   @media (max-width: 1024px) {
@@ -19,6 +26,9 @@
     margin: 0 auto;
     text-align: center;
   }
+  @media (max-width: 375px) {
+    margin-bottom: 50px;
+  }
 }
 .header {
   @media (max-width: 1024px) {
@@ -26,6 +36,13 @@
   }
   @media (max-width: 425px) {
     font-size: "text-[10px]";
+    padding-bottom: 20px;
+  }
+}
+.imgHead {
+  @media (max-width: 375px) {
+    max-width: 90%;
+    max-height: 70%;
   }
 }
 .mainBtn {
@@ -35,7 +52,12 @@
   @media (max-width: 425px) {
     margin-right: 40px;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 375px) {
+    margin-top: -50px;
+    margin-left: 70px;
+  }
+  @media (max-width: 320px) {
+    margin-left: 45px;
   }
 }
 .video {
@@ -48,6 +70,12 @@
   @media (max-width: 1024px) {
     flex-direction: column;
     gap: 20px;
+  }
+}
+.card {
+  @media (max-width: 320px) {
+    max-width: 250px;
+    min-height: 600px;
   }
 }
 .servicePage {
@@ -105,6 +133,11 @@
     padding-left: 30px;
   }
 }
+.textText {
+  @media (max-width: 375px) {
+    margin-left: 5px;
+  }
+}
 .headerTitleMin {
   @media (max-width: 425px) {
     font-size: 20px;
@@ -143,9 +176,8 @@
   @media (max-width: 425px) {
     padding-left: 20px;
   }
-}
-.flexFlexFlex {
-  @media (max-width: 425px) {
+  @media (max-width: 375px) {
+    padding-right: 45px;
   }
 }
 .sep {
@@ -160,6 +192,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  @media (max-width: 375px) {
+    gap: 50px;
   }
 }
 .headerMin {
@@ -185,6 +220,19 @@
     align-items: center;
     justify-content: center;
   }
+  @media (max-width: 320px) {
+    text-align: center;
+  }
+}
+.maps {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+}
+.textCont {
+  @media (max-width: 320px) {
+    padding: 0 15px;
+  }
 }
 .contactImgImg {
   @media (max-width: 425px) {
@@ -195,26 +243,37 @@
 }
 .imgImgImg {
   @media (max-width: 425px) {
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 50px;
   }
   @media (max-width: 1024px) {
     padding: 0 100px;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 375px) {
+    flex-wrap: nowrap;
     flex-direction: column;
+  }
+}
+.inst {
+  @media (max-width: 375px) {
+    margin-left: 16px;
   }
 }
 .forms {
   @media (max-width: 425px) {
     min-width: 300px;
   }
+  @media (max-width: 320px) {
+    padding-right: 30px;
+  }
 }
 .pad {
   @media (max-width: 1024px) {
+    padding: 0 15px;
+  }
+}
+.textPad {
+  @media (max-width: 375px) {
     padding: 0 15px;
   }
 }

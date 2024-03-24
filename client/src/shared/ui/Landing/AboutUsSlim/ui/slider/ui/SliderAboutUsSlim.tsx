@@ -12,7 +12,7 @@ export const SliderAboutUsSlim = () => {
   const { t } = useTranslation("aboutUsSlim");
   return (
     <div>
-      {window.innerWidth !== 425 && (
+      {window.innerWidth > 425 && (
         <div className="abc">
           <Swiper
             spaceBetween={30}

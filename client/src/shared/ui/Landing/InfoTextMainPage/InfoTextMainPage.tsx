@@ -14,7 +14,7 @@ export const InfoTextMainPage = () => {
           </p>
         </p>
         <p className="space-bold-font text-5xl -ml-1">
-          <p className="headerMinText">
+          <p className="headerMinText textText">
             {t(
               "Перевозим грузы из Шеньчженя в любую точку РФ быстро и без задержек",
             )}
@@ -28,7 +28,7 @@ export const InfoTextMainPage = () => {
           </p>
         </p>
         <div className="space-bold-font flex gap-20 pt-10 flexFlex">
-          <p className="flex flex-col items-center border-dashed border-r-2 border-white pr-10 text-4xl textInf flexFlexFlex">
+          <p className="flex flex-col items-center border-dashed border-r-2 border-white pr-10 text-4xl textInf">
             <p className="textMin">
               26К
               {window.innerWidth <= 425 && (

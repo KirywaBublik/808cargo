@@ -39,7 +39,7 @@ const MainPage = () => {
         )}
         <Button
           onClick={handleOpen}
-          className="space-medium-14 mainBtn "
+          className="space-medium-14 mainBtn"
         >
           {t("Заказать звонок")}
         </Button>

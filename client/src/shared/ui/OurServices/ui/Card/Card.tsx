@@ -10,7 +10,7 @@ export const CardItem = ({
 }: Card & ComponentProps<"div">) => {
   return (
     <div
-      className="p-10 rounded-xl bg-white flex flex-col justify-between items-start w-[367px] h-[430px] mx-2"
+      className="p-10 rounded-xl bg-white flex flex-col justify-between items-start w-[367px] h-[430px] mx-2 card"
       {...props}
     >
       <img width={70} src={img} alt="" />
