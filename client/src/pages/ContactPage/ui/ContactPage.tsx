@@ -7,13 +7,7 @@ import {
   Placemark,
 } from "@pbe/react-yandex-maps";
 import "@shared/assets/styles/adaptive.css";
-import {
-  avito,
-  inst,
-  tg,
-  wa,
-  we,
-} from "@shared/assets";
+import { inst, tg, wa, we } from "@shared/assets";
 
 const ContactPage = () => {
   const { t } = useTranslation("contacts");
@@ -135,31 +129,41 @@ const ContactPage = () => {
             </Link>
             <br />
             <br />
-            <img
-              className="w-20 h-20 rounded"
-              src={tg}
-              alt=""
-            />
+            <Link
+              to="https://t.me/ru_808cargo"
+              target="_blank"
+            >
+              <img
+                className="w-20 h-20 rounded"
+                src={tg}
+                alt=""
+              />
+            </Link>
           </div>
           <div className="text-center">
             <Link
               className="underline"
-              to="https://wa.me/qr/VM7EE64BXXIDH1"
+              to="https://api.whatsapp.com/send?phone=79934766772"
               target="_blank"
             >
               {t("Ватсапп")}
             </Link>
             <br />
             <br />
-            <img
-              className="w-20 h-20 rounded"
-              src={wa}
-              alt=""
-            />
-          </div>
-          <div className="text-center inst">
             <Link
-              className="underline"
+              to="https://api.whatsapp.com/send?phone=79934766772"
+              target="_blank"
+            >
+              <img
+                className="w-20 h-20 rounded"
+                src={wa}
+                alt=""
+              />
+            </Link>
+          </div>
+          <div className="inst">
+            <Link
+              className="underline instInst"
               to="https://www.instagram.com/808cargo"
               target="_blank"
             >
@@ -167,31 +171,20 @@ const ContactPage = () => {
             </Link>
             <br />
             <br />
-            <img
-              className="w-20 h-20 rounded"
-              src={inst}
-              alt=""
-            />
-          </div>
-          <div className="text-center">
             <Link
-              className="underline"
-              to="https://www.avito.ru/user/22bc2d6e7e241d589e89235a68c05dbe/profile?src=sharing"
+              to="https://www.instagram.com/808cargo"
               target="_blank"
             >
-              {t("Авито")}
+              <img
+                className="w-20 h-20 rounded"
+                src={inst}
+                alt=""
+              />
             </Link>
-            <br />
-            <br />
-            <img
-              className="w-20 h-20 rounded"
-              src={avito}
-              alt=""
-            />
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center py-10">
-          <p className="mb-10">{t("ВиЧат")}</p>
+        <div className="flex flex-col justify-center items-center py-10 wewe">
+          <p className="mb-8">{t("ВиЧат")}</p>
           <img
             className="w-20 h-20 rounded"
             src={we}

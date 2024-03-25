@@ -14,7 +14,7 @@ import we from "./icons/we.png";
 import img from "./icons/img.jpg";
 import logic from "./icons/logic.jpg";
 import tg from "./icons/tg.png";
-import wa from "./icons/wa.png";
+import wa from "./icons/wa.jpg";
 import inst from "./icons/inst.png";
 import avito from "./icons/avito.png";
 export {

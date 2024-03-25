@@ -10,7 +10,7 @@
     padding: 0 15px;
   }
 }
-.abobut{
+.abobut {
   @media (max-width: 1024px) {
     text-align: center;
   }
@@ -43,7 +43,7 @@
     padding-bottom: 20px;
   }
 }
-.padpad{
+.padpad {
   @media (max-width: 1024px) {
     padding: 0 30px;
   }
@@ -176,7 +176,7 @@
     margin-right: 0;
   }
 }
-.serviceTitle{
+.serviceTitle {
   @media (max-width: 320px) {
     padding: 0 15px;
   }
@@ -309,5 +309,26 @@
 .textPad {
   @media (max-width: 375px) {
     padding: 0 15px;
+  }
+}
+.instInst {
+  margin-left: -4px;
+  @media (max-width: 1024px) {
+    margin-left: -4px;
+  }
+}
+.wewe {
+  margin-left: -5px;
+  @media (max-width: 1440px) {
+    margin-left: -10px;
+  }
+  @media (max-width: 1024px) {
+    margin-left: -12px;
+  }
+  @media (max-width: 375px) {
+    margin-left: -5px;
+  }
+  @media (max-width: 320px) {
+    margin-left: 3px;
   }
 }
