@@ -58,6 +58,13 @@ VITE_API_URL={link} yarn dev(build)
 ```bash
 VITE_PORT={number(4 digits)} yarn dev(build)
 ```
+<br/>
+Чтобы изменить endpoint в backend, нужно ввести команду:
+```bash
+export URL_BACK=api
+```
+где URL_BACK - переменная в файле .env,
+api - новый endpoint, к которому будет приходить запрос
 
 <br/>
 <br/>
