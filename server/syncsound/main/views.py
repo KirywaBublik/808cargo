@@ -11,7 +11,13 @@ from .serializers import VisitSerializer
 from rest_framework import generics
 from rest_framework.response import Response
 
-from .consts import TELE_NUM, API_TOKEN_INSTANCE, ID_INSTANCE
+from dotenv import load_dotenv
+
+load_dotenv()
+
+ID_INSTANCE = os.getenv('ID_INSTANCE')
+API_TOKEN_INSTANCE = os.getenv('API_TOKEN_INSTANCE')
+TELE_NUM = os.getenv('TELE_NUM')
 
 
 class VisitCard(generics.CreateAPIView):

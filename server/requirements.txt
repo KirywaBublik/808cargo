@@ -26,3 +26,4 @@ openpyxl==3.1.2
 twilio==9.0.0
 whatsapp-api-client-python==0.0.44
 django-cors-headers==4.3.1
+python-dotenv==1.0.1
