@@ -90,8 +90,3 @@ class VisitCard(generics.CreateAPIView):
         self.whatsapp_sender(serializer.data)
         self.export_form_data_to_xlsx(serializer.data)
         return Response({'message': request.data})
-
-    def get(self, request):
-        queryset = User.objects.all()
-        serializer = VisitSerializer(queryset, many=True)
-        return Response(serializer.data)
