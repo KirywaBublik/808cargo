@@ -5,11 +5,9 @@ import { addOverflowHiddenToBody } from "@shared/lib/bodyOverflowHidden.ts";
 import { navLinks } from "@widgets/Header";
 import {
   Link,
-  useLocation,
   useNavigate,
 } from "react-router-dom";
 import { logo } from "@shared/assets";
-import { scrollTo } from "@shared/lib";
 import { useTranslation } from "react-i18next";
 import "@shared/assets/styles/adaptive.css";
 
@@ -19,8 +17,6 @@ export const Footer = () => {
   const [active, setActive] = useState(false);
 
   const navigate = useNavigate();
-
-  const location = useLocation();
 
   const handleOpen = () => {
     setActive(true);
@@ -37,11 +33,9 @@ export const Footer = () => {
             {navLinks.map(
               ({ id, name, path }) => (
                 <Link
-                  onClick={
-                    id === 0
-                      ? scrollTo
-                      : undefined
-                  }
+                  onClick={() => {
+                    navigate("/");
+                  }}
                   key={id}
                   className="space-medium-14"
                   to={path}
@@ -54,13 +48,9 @@ export const Footer = () => {
         </div>
         <div className="space-bold-font text-lg ml-20 headerImg">
           <img
-            onClick={
-              location.pathname === "/"
-                ? scrollTo
-                : () => {
-                    navigate("/");
-                  }
-            }
+            onClick={() => {
+              navigate("/");
+            }}
             className="w-64 h-20 cursor-pointer my-0 mx-auto"
             src={logo}
             alt=""
