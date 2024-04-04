@@ -82,6 +82,9 @@ export const Header = () => {
             <Link
               className="underline-effect"
               to={path}
+              onClick={() => {
+                setIsOpen(false);
+              }}
               key={id}
             >
               {t(`${name}`)}
